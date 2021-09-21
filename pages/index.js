@@ -1,82 +1,97 @@
-import Head from 'next/head'
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <header>
+        <nav className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between py-4">
+          <div className="flex items-center justify-center divide-gray-700 divide-x-2">
+            <div className="relative h-12 w-48 mr-4">
+              <Image
+                src="/logo.png"
+                layout="fill"
+                objectFit="contain"
+                objectPosition="left"
+                alt="logo"
+              />
+            </div>
+            <div>
+              <div className="ml-4 uppercase">talent solutions</div>
+            </div>
+          </div>
+          <div>
+            <ul className="flex flex-col md:flex-row md:space-x-6">
+              <li>Roles We Place</li>
+              <li>How We Work With You</li>
+              <li>Why Work With Us?</li>
+              <li>Meet Rodrigo</li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main>
+        {/* hero */}
+        <section
+          style={{ height: "calc(100vh - 64px)" }}
+          className="h-full bg-gradient-to-r from-[#5A4797] to-[#2364A4] hidden"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
-    </div>
-  )
+          <div className="flex items-center max-w-screen-xl mx-auto w-full h-full">
+            <div style={{ width: "50%" }}>
+              <h1 className="text-9xl leading-none text-white font-strawberry capitalize">
+                Build your team.
+              </h1>
+              <h2 className="text-5xl leading-tight -mt-2 text-white">
+                Meet your deadlines. Create training that gets results.
+              </h2>
+              <p className="text-lg text-white mt-6">
+                You need good people to get the job done. Every day we produce
+                training solutions, so we know how you feel! Allow us to help
+                you find exceptional talent to augment your team. We love this
+                work and we’re ready to help.
+              </p>
+              <div
+                style={{ maxWidth: "80%" }}
+                className="text-2xl mt-12 font-bold italic text-[#3CBFAE]"
+              >
+                “I have worked with SweetRush and Rodrigo for many years, and I
+                trust them and count on them, and they never let me down.”
+              </div>
+              <div className="flex items-end space-x-4 mt-6 text-white">
+                <p>
+                  <b>—Douglas E. Miller,</b> Director, Learning and Awareness
+                </p>
+                <div>
+                  <Image
+                    src="/kaiser-logo.png"
+                    width={125}
+                    height={15}
+                    objectFit="contain"
+                    objectPosition="bottom"
+                    alt="Kaiser Permanente logo"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              style={{ height: "85%" }}
+              className="flex-1 relative w-full self-end"
+            >
+              <Image
+                src="/hero.png"
+                layout="fill"
+                objectFit="cover"
+                alt="woman"
+                objectPosition="top"
+              />
+            </div>
+          </div>
+        </section>
+        {/* another section */}
+        <section className="w-full h-screen bg-yellow-200"></section>
+        <div></div>
+      </main>
+      <footer></footer>
+    </>
+  );
 }
