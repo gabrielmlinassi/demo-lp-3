@@ -20,9 +20,9 @@ export default function Home() {
       </header>
       <main>
         {/* hero */}
-        <section className="h-full bg-gradient-to-r from-[#5A4797] to-[#2364A4]">
-          <div className="flex items-stretch max-w-screen-xl mx-auto pt-12 sm:pt-20 px-3 sm:px-0">
-            <div className="flex-1 pb-56">
+        <section className="bg-gradient-to-r from-[#5A4797] to-[#2364A4]">
+          <div className="grid grid-cols-3 sm:grid-cols-2 max-w-screen-xl mx-auto pt-10 sm:pt-20">
+            <div className="col-span-3 sm:col-start-1 sm:col-span-1 px-3">
               <h1 className="text-7xl sm:text-9xl leading-none text-white font-strawberry capitalize">
                 Build your team.
               </h1>
@@ -35,36 +35,36 @@ export default function Home() {
                 you find exceptional talent to augment your team. We love this
                 work and we’re ready to help.
               </p>
-              <div>
-                <div className="text-lg sm:text-2xl max-w-[70%] sm:max-w-[80%] mt-4 sm:mt-12 font-bold italic text-[#3CBFAE]">
-                  “I have worked with SweetRush and Rodrigo for many years, and
-                  I trust them and count on them, and they never let me down.”
-                </div>
-                <div className="flex flex-col sm:flex-row sm:items-end max-w-[75%] sm:max-w-full space-y-2 sm:space-y-0 sm:space-x-4 mt-6 text-white">
-                  <p>
-                    <b>—Douglas E. Miller, </b>
-                    Director, Learning and Awareness
-                  </p>
-                  <div>
-                    <Image
-                      src="/kaiser-logo.png"
-                      width={125}
-                      height={15}
-                      objectFit="contain"
-                      objectPosition="bottom"
-                      alt="Kaiser Permanente logo"
-                    />
-                  </div>
+            </div>
+            <div className="col-start-1 row-start-2 row-end-2 z-10 col-span-2 sm:col-span-1 pb-28 sm:pb-56 pl-3">
+              <div className="text-lg sm:text-2xl mt-4 sm:mt-12 font-bold italic text-[#3CBFAE]">
+                “I have worked with SweetRush and Rodrigo for many years, and I
+                trust them and count on them, and they never let me down.”
+              </div>
+              <div className="max-w-[200px] sm:max-w-full flex flex-col sm:flex-row sm:items-end space-y-2 sm:space-y-0 sm:space-x-4 mt-6 text-white">
+                <p>
+                  <b>—Douglas E. Miller, </b>
+                  Director, Learning and Awareness
+                </p>
+                <div>
+                  <Image
+                    src="/kaiser-logo.png"
+                    width={125}
+                    height={15}
+                    objectFit="contain"
+                    objectPosition="bottom"
+                    alt="Kaiser Permanente logo"
+                  />
                 </div>
               </div>
             </div>
-            <div className="flex-1 relative hidden sm:block">
+            <div className="col-start-2 col-span-2 row-start-2 row-end-2 sm:row-start-1 sm:row-span-2 relative">
               <Image
                 src="/hero.png"
                 layout="fill"
                 objectFit="cover"
                 alt="woman"
-                objectPosition="top"
+                className="object-left sm:object-top"
               />
             </div>
           </div>
