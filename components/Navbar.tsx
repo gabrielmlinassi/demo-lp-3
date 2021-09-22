@@ -13,9 +13,9 @@ const navigation = [
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-white fixed top-0 w-full z-20">
+    <Disclosure as="nav" className="h-16">
       {({ open }) => (
-        <div className="shadow-md">
+        <div className="lg:fixed lg:top-0 z-20 lg:w-full bg-white shadow-md">
           <div className="max-w-screen-xl mx-auto px-3 xl:px-5 2xl:px-0">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
