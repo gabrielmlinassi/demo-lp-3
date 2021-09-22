@@ -58,13 +58,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="col-start-2 col-span-2 row-start-2 row-end-2 sm:row-start-1 sm:row-span-2 relative">
+            <div className="relative col-start-3 sm:col-start-2 sm:row-start-1 sm:row-span-2 -ml-20 sm:ml-0 mt-6 sm:mt-0">
               <Image
-                src="/hero.png"
+                src="/hero-large.png"
                 layout="fill"
                 objectFit="cover"
                 alt="woman"
-                className="object-left sm:object-top"
+                className="object-left-top sm:object-top"
               />
             </div>
           </div>

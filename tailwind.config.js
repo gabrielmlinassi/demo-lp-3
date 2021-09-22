@@ -18,6 +18,9 @@ module.exports = {
         "5xl": "47px",
         "2xl": "1.375rem", // 22px
       },
+      objectPosition: {
+        my: "-200% 0%",
+      },
     },
   },
   variants: {
