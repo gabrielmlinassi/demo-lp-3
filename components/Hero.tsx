@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="bg-gradient-to-r from-[#5A4797] to-[#2364A4]">
-      <div className="relative grid grid-cols-3 lg:grid-cols-2 max-w-screen-xl mx-auto pt-10 lg:pt-20">
+      <div className="relative grid grid-cols-3 lg:grid-cols-2 max-w-screen-xl mx-auto pt-10 lg:pt-28">
         <div className="col-span-3 lg:col-span-1 px-3 xl:px-5 2xl:px-0">
           <h1 className="text-7xl sm:text-9xl leading-none text-white font-strawberry capitalize">
             Build your team.
@@ -55,7 +55,7 @@ export default function Hero() {
             className="object-left-top"
           />
         </div>
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-50">
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10">
           <div className="p-1 rounded-full border-4 border-pink-400 border-opacity-0 focus-within:border-opacity-100">
             <button className="bg-[#FF0066] text-white font-medium whitespace-nowrap text-sm sm:text-lg px-4 sm:px-6 py-2 sm:py-3 rounded-full transition-colors duration-300 hover:bg-[#ff3887] shadow-md mr-[-1.5px] focus:outline-none">
               Find My Perfect Fit Learning Professional
