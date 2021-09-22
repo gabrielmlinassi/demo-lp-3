@@ -18,7 +18,7 @@ export default function Navbar() {
         <div className="shadow-md">
           <div className="max-w-screen-xl mx-auto px-3 lg:px-0">
             <div className="relative flex items-center justify-between h-16">
-              <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+              <div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-[#ff99c2]">
                   <span className="sr-only">Open main menu</span>
@@ -53,7 +53,7 @@ export default function Navbar() {
                     </span>
                   </div>
                 </div>
-                <div className="hidden sm:block">
+                <div className="hidden lg:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
                       <a
@@ -76,7 +76,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
+          <Disclosure.Panel className="lg:hidden">
             <div className="absolute left-4 right-0 top-16 bottom-4 z-20 pt-2 pb-3 space-y-1 divide-y divide-white bg-[#F1F2F4]">
               {navigation.map((item) => (
                 <a
