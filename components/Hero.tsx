@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="bg-gradient-to-r from-[#5A4797] to-[#2364A4]">
-      <div className="relative grid grid-cols-3 lg:grid-cols-2 max-w-screen-xl mx-auto pt-10 lg:pt-28">
+      <div className="relative grid grid-cols-3 lg:grid-cols-2 max-w-screen-xl mx-auto pt-10 lg:pt-20">
         <div className="col-span-3 lg:col-span-1 px-3 xl:px-5 2xl:px-0">
           <h1 className="text-7xl sm:text-9xl leading-none text-white font-strawberry capitalize">
             Build your team.
