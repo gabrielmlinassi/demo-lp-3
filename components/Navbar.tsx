@@ -16,7 +16,7 @@ export default function Navbar() {
     <Disclosure as="nav" className="bg-white">
       {({ open }) => (
         <div className="shadow-md">
-          <div className="max-w-screen-xl mx-auto px-3 lg:px-0">
+          <div className="max-w-screen-xl mx-auto px-3 xl:px-5 2xl:px-0">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
                 {/* Mobile menu button*/}
@@ -47,14 +47,14 @@ export default function Navbar() {
                       alt="SweetRush"
                     />
                   </div>
-                  <div className="hidden sm:block pl-3 mt-1">
+                  <div className="hidden xl:block pl-3 mt-1">
                     <span className="text-[#009BDE] text-sm font-medium">
                       TALENT SOLUTIONS
                     </span>
                   </div>
                 </div>
-                <div className="hidden lg:block">
-                  <div className="flex space-x-4">
+                <div className="hidden lg:block mt-1">
+                  <div className="flex 2xl:space-x-4">
                     {navigation.map((item) => (
                       <a
                         key={item.name}

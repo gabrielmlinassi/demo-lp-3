@@ -22,7 +22,7 @@ export default function Home() {
         {/* hero */}
         <section className="bg-gradient-to-r from-[#5A4797] to-[#2364A4]">
           <div className="grid grid-cols-3 lg:grid-cols-2 max-w-screen-xl mx-auto pt-10 lg:pt-20">
-            <div className="col-span-3 lg:col-span-1 px-3">
+            <div className="col-span-3 lg:col-span-1 px-3 xl:px-5 2xl:px-0">
               <h1 className="text-7xl sm:text-9xl leading-none text-white font-strawberry capitalize">
                 Build your team.
               </h1>
@@ -32,7 +32,7 @@ export default function Home() {
             </div>
 
             {/*  */}
-            <div className="col-span-3 sm:col-span-2 lg:col-span-1 px-3 mt-6">
+            <div className="col-span-3 sm:col-span-2 lg:col-span-1 px-3 xl:px-5 2xl:px-0 mt-6">
               <p className="text-base sm:text-lg text-white">
                 You need good people to get the job done. Every day we produce
                 training solutions, so we know how you feel! Allow us to help
@@ -42,12 +42,12 @@ export default function Home() {
             </div>
             {/*  */}
 
-            <div className="sm:max-w-[400px] lg:max-w-full col-start-1 col-span-2 row-start-3 row-end-3 z-10 lg:col-span-1 pb-28 lg:pb-56 pl-3">
+            <div className="sm:max-w-[400px] lg:max-w-full col-start-1 col-span-2 row-start-3 row-end-3 z-10 lg:col-span-1 pb-28 lg:pb-56 pl-3 xl:pl-5 2xl:pl-0">
               <div className="text-lg sm:text-2xl mt-4 sm:mt-12 font-bold italic text-[#3CBFAE]">
                 “I have worked with SweetRush and Rodrigo for many years, and I
                 trust them and count on them, and they never let me down.”
               </div>
-              <div className="max-w-[200px] sm:max-w-full flex flex-col lg:flex-row lg:items-end space-y-2 lg:space-y-0 lg:space-x-4 mt-6 text-white">
+              <div className="max-w-[200px] sm:max-w-full flex flex-col xl:flex-row space-y-2 lg:space-y-0 lg:space-x-4 mt-6 text-white">
                 <p>
                   <b>—Douglas E. Miller, </b>
                   Director, Learning and Awareness
@@ -70,7 +70,7 @@ export default function Home() {
                 layout="fill"
                 objectFit="cover"
                 alt="woman"
-                className="object-left-top sm:object-top"
+                className="object-left-top"
               />
             </div>
           </div>
