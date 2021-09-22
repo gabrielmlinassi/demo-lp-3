@@ -29,14 +29,20 @@ export default function Home() {
               <h2 className="text-3xl sm:text-5xl leading-tight font-medium text-white">
                 Meet your deadlines. Create training that gets results.
               </h2>
-              <p className="text-base sm:text-lg text-white mt-6">
+            </div>
+
+            {/*  */}
+            <div className="col-span-3 sm:col-span-2 lg:col-span-1 px-3 mt-6">
+              <p className="text-base sm:text-lg text-white">
                 You need good people to get the job done. Every day we produce
                 training solutions, so we know how you feel! Allow us to help
                 you find exceptional talent to augment your team. We love this
                 work and we’re ready to help.
               </p>
             </div>
-            <div className="col-start-1 col-span-2 row-start-2 row-end-2 z-10 lg:col-span-1 pb-28 lg:pb-56 pl-3">
+            {/*  */}
+
+            <div className="sm:max-w-[400px] lg:max-w-full col-start-1 col-span-2 row-start-3 row-end-3 z-10 lg:col-span-1 pb-28 lg:pb-56 pl-3">
               <div className="text-lg sm:text-2xl mt-4 sm:mt-12 font-bold italic text-[#3CBFAE]">
                 “I have worked with SweetRush and Rodrigo for many years, and I
                 trust them and count on them, and they never let me down.”
@@ -58,7 +64,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative col-start-3 lg:col-start-2 lg:row-start-1 lg:row-span-2 -ml-20 sm:ml-0 mt-6 sm:mt-0">
+            <div className="relative col-start-3 sm:row-start-2 sm:row-span-2 lg:col-start-2 lg:row-start-1 lg:row-span-3 -ml-20 lg:ml-0 mt-6 lg:mt-0">
               <Image
                 src="/hero-large.png"
                 layout="fill"
