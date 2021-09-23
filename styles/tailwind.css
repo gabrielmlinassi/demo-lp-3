@@ -2,5 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .clip-path-inverted-hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+}
+
 @layer components {
+  .my-test2 {
+    @apply before:absolute before:top-1/2 before:-right-full before:transform before:-translate-y-1/2 before:w-[125px] before:h-[30px] before:bg-line-1 before:bg-no-repeat;
+  }
 }

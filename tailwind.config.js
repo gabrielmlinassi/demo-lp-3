@@ -6,6 +6,12 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      backgroundImage: {
+        "bubble-texture": 'url("/texture.svg")',
+        "line-1": 'url("/assets/line1.svg")',
+        "line-2": 'url("/assets/line2.svg")',
+        "line-3": 'url("/assets/line3.svg")',
+      },
       maxWidth: {
         "screen-2xl": "90rem", // 1440px
         "screen-xl": "84.375rem", // 1350px
