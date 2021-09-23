@@ -3,15 +3,7 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import cn from "classnames";
 
-const navigation = [
-  { name: "Build Your Team", href: "#", current: true },
-  { name: "Roles We Place", href: "#", current: false },
-  { name: "How We Work With You", href: "#", current: false },
-  { name: "Why Work With Us?", href: "#", current: false },
-  { name: "Meet Rodrigo", href: "#", current: false },
-];
-
-export default function Navbar() {
+export const Navbar = () => {
   return (
     <Disclosure as="nav" className="h-16">
       {({ open }) => (
@@ -99,4 +91,14 @@ export default function Navbar() {
       )}
     </Disclosure>
   );
-}
+};
+
+const navigation = [
+  { name: "Build Your Team", href: "#", current: true },
+  { name: "Roles We Place", href: "#", current: false },
+  { name: "How We Work With You", href: "#", current: false },
+  { name: "Why Work With Us?", href: "#", current: false },
+  { name: "Meet Rodrigo", href: "#", current: false },
+];
+
+export default Navbar;
