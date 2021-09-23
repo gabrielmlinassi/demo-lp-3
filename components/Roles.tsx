@@ -4,7 +4,7 @@ import CTAButton from "./CTAButton";
 
 const Roles = () => {
   return (
-    <section className="max-w-screen-xl mx-auto my-16">
+    <section className="max-w-screen-xl mx-auto my-16 sm:px-3 xl:px-0">
       <h1 className="text-4xl text-center font-bold text-[#5E6284]">
         <span className="font-strawberry text-8xl leading-tight font-medium mr-2 text-transparent bg-clip-text bg-gradient-to-r from-[#5A4797] to-[#2364A4]">
           Roles
@@ -17,7 +17,7 @@ const Roles = () => {
         ready to augment your team in these roles:
       </p>
       <CardRoles />
-      <div className="text-center space-y-6 mt-20 xl:mt-0">
+      <div className="text-center space-y-6 mt-20 sm:mt-0">
         <p className="text-[#2263A3] font-bold">
           We’re also adept at securing difficult-to-find Subject Matter Experts.
         </p>
@@ -29,21 +29,53 @@ const Roles = () => {
 
 const CardRoles = () => {
   return (
-    <div className="grid gap-y-20 xl:gap-y-0 grid-cols-2 grid-rows-4 xl:grid-rows-3 xl:grid-cols-6 place-items-center xl:mt-20">
+    <div
+      className={cn(
+        "grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 grid-rows-4 xl:grid-rows-3 place-items-center gap-y-20 xl:gap-y-0 xl:mt-20 sm:max-w-xl sm:mx-auto xl:max-w-full"
+      )}
+    >
       {ROLES.map((role, key) => (
         <div
           key={key}
           className={cn(
-            "inline-flex flex-col w-40 xl:w-48 h-36 px-8 space-y-4 items-center justify-center rounded-2xl bg-[#F1F2F4]",
-            key === 0 && "row-start-1 row-span-2 col-start-1",
-            key === 1 && "row-start-2 col-start-2",
+            "inline-flex flex-col w-40 sm:w-44 xl:w-48 h-36 px-8 space-y-4 items-center justify-center rounded-2xl bg-[#F1F2F4]",
+
+            key === 0 &&
+              cn(
+                "row-start-1 row-span-2 col-start-1",
+                "sm:row-start-1 sm:row-span-2 sm:col-start-1",
+                "xl:row-start-1 xl:row-span-2 xl:col-start-1"
+              ),
+            key === 1 &&
+              cn(
+                "row-start-2 col-start-2",
+                "sm:row-start-2 sm:row-span-2 sm:col-start-1",
+                "xl:row-start-2 xl:col-start-2"
+              ),
             key === 2 &&
-              "row-start-2 row-span-2 col-start-1 xl:row-start-1 xl:col-start-3",
+              cn(
+                "row-start-2 row-span-2 col-start-1",
+                "sm:row-start-2 sm:row-span-1 sm:col-start-2",
+                "xl:row-start-1 xl:row-span-2 xl:col-start-3"
+              ),
             key === 3 &&
-              `row-start-3 col-start-2 xl:row-start-2 xl:col-start-4`,
+              cn(
+                "row-start-3 col-start-2",
+                "sm:row-start-3 sm:col-start-2",
+                "xl:row-start-2 xl:col-start-4"
+              ),
             key === 4 &&
-              "row-start-3 row-span-2 col-start-1 xl:row-start-1 xl:col-start-5",
-            key === 5 && "row-start-4 col-start-2 xl:row-start-2 xl:col-start-6"
+              cn(
+                "row-start-3 col-start-1 row-span-2",
+                "sm:row-start-2 sm:row-span-2 sm:col-start-3",
+                "xl:row-start-1 xl:col-start-5 xl:row-span-2"
+              ),
+            key === 5 &&
+              cn(
+                "row-start-4 col-start-2",
+                "sm:row-start-3 sm:row-span-2 sm:col-start-3",
+                "xl:row-start-2 xl:col-start-6"
+              )
           )}
         >
           <div
