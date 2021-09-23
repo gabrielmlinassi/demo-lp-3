@@ -1,21 +1,23 @@
 import Image from "next/image";
 import cn from "classnames";
+
 import CTAButton from "./CTAButton";
+import Heading from "./Heading";
 
 const Roles = () => {
   return (
     <section className="max-w-screen-xl mx-auto my-16 sm:px-3 xl:px-0">
-      <h1 className="text-4xl text-center font-bold text-[#5E6284]">
-        <span className="font-strawberry text-8xl leading-tight font-medium mr-2 text-transparent bg-clip-text bg-gradient-to-r from-[#5A4797] to-[#2364A4]">
-          Roles
-        </span>
-        We Place
-      </h1>
-      <p className="text-center text-[#5E6284] text-lg">
-        Our learning and development professionals are{" "}
-        <span className="font-bold">experienced, vetted, available,</span> and
-        ready to augment your team in these roles:
-      </p>
+      <Heading
+        highlightedTitle="Roles"
+        title="We Place"
+        subtitle={
+          <>
+            Our learning and development professionals are{" "}
+            <span className="font-bold">experienced, vetted, available,</span>{" "}
+            and ready to augment your team in these roles:
+          </>
+        }
+      />
       <CardRoles />
       <div className="text-center space-y-6 mt-20 sm:mt-0">
         <p className="text-[#2263A3] font-bold">
