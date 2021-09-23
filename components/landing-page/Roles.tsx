@@ -1,8 +1,8 @@
 import Image from "next/image";
 import cn from "classnames";
 
-import CTAButton from "./CTAButton";
-import Heading from "./Heading";
+import CTAButton from "@/shared/CTAButton";
+import Heading from "@/shared/Heading";
 
 const Roles = () => {
   return (

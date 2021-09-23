@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CTAButton from "components/CTAButton";
+import CTAButton from "@/shared/CTAButton";
 
 export default function Hero() {
   return (
