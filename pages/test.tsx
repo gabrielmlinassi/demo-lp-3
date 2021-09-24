@@ -32,10 +32,14 @@ const steps: Steps[] = [
 
 export default function Test() {
   return (
-    <div className="flex flex-col xl:flex-row justify-center items-center space-y-12 xl:space-y-0 xl:space-x-8 xl:m-44">
+    <div className="grid grid-cols-1 sm:gap-8 xl:gap-0 sm:grid-cols-2 xl:grid-cols-4 space-y-12 sm:space-y-0 xl:space-x-8 xl:m-44">
       {steps.map((step, idx) => (
         <div
-          className="relative inline-flex flex-col items-center w-full sm:w-80 bg-yellow-300"
+          className={cn(
+            "relative inline-flex flex-col items-center w-full sm:w-80 bg-yellow-300",
+            idx % 2 === 0 ? "sm:place-self-end" : "sm:place-self-start",
+            "xl:place-self-center"
+          )}
           key={idx}
         >
           <StepArrow idx={idx} />
@@ -46,7 +50,9 @@ export default function Test() {
             </span>
           </div>
           {/* p2 */}
-          <div className={cn("relative xl:mt-8", idx === 0 ? "mt-20" : "mt-8")}>
+          <div
+            className={cn("relative", idx === 0 ? "mt-20" : "mt-8", "sm:mt-8")}
+          >
             {step.name && step.role && (
               <Badge name={step.name} role={step.role} />
             )}
@@ -88,7 +94,7 @@ type BadgeProps = {
 
 const Badge: FC<BadgeProps> = ({ name, role }) => {
   return (
-    <div className="absolute z-10 -left-24 -top-12 xl:-left-32 xl:-top-5 inline-flex flex-col items-center w-44 h-32 p-1 bg-bubble-texture bg-no-repeat bg-contain">
+    <div className="absolute z-10 -left-24 -top-12 xl:-left-32 sm:-top-5 inline-flex flex-col items-center w-44 h-32 p-1 bg-bubble-texture bg-no-repeat bg-contain">
       <div className="font-strawberry text-4xl text-white">{name}</div>
       <div className="text-sm w-3/4 text-center text-white leading-tight">
         {role}
@@ -105,9 +111,9 @@ const StepArrow = ({ idx }) => {
         "-bottom-20 w-[70px] h-[70px]",
         idx % 2 === 0 ? "right-8" : "left-8 xl:left-auto",
         "xl:top-36 xl:-right-20 xl:w-[125px] xl:h-[30px]",
-        idx === 0 && "bg-line-1-mobile xl:bg-line-1",
-        idx === 1 && "bg-line-2-mobile xl:bg-line-2",
-        idx === 2 && "bg-line-3-mobile xl:bg-line-3"
+        idx === 0 && "bg-line-1-mobile sm:bg-none xl:bg-line-1",
+        idx === 1 && "bg-line-2-mobile sm:bg-none xl:bg-line-2",
+        idx === 2 && "bg-line-3-mobile sm:bg-none xl:bg-line-3"
       )}
     />
   );
