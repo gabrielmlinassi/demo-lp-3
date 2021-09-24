@@ -11,6 +11,9 @@ module.exports = {
         "line-1": 'url("/assets/line1.svg")',
         "line-2": 'url("/assets/line2.svg")',
         "line-3": 'url("/assets/line3.svg")',
+        "line-1-mobile": 'url("/assets/line1-mobile.svg")',
+        "line-2-mobile": 'url("/assets/line2-mobile.svg")',
+        "line-3-mobile": 'url("/assets/line3-mobile.svg")',
       },
       maxWidth: {
         "screen-2xl": "90rem", // 1440px
