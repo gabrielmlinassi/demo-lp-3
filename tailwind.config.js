@@ -6,6 +6,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      boxShadow: {
+        test: "0px 5px 6px 0px rgba(0,0,0,0.2)",
+      },
       backgroundImage: {
         "bubble-texture": 'url("/texture.svg")',
         "line-1": 'url("/assets/line1.svg")',

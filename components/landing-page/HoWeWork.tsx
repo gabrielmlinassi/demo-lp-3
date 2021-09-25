@@ -3,6 +3,7 @@ import { FC } from "react";
 import cn from "classnames";
 
 import Heading from "@/shared/Heading";
+import CTAButton from "./shared/CTAButton";
 
 type Steps = {
   name?: string;
@@ -96,6 +97,9 @@ const HoWeWork = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex items-center justify-center mt-28">
+          <CTAButton>Find My Perfect Fit Learning Professional</CTAButton>
         </div>
       </div>
     </section>
