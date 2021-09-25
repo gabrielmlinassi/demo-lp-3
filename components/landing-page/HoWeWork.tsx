@@ -122,14 +122,12 @@ const StepArrow = ({ idx }) => {
   return (
     <div
       className={cn(
-        "absolute z-10 bg-no-repeat",
-        idx === 3 && "hidden",
-        "-bottom-20 w-[70px] h-[70px]",
-        idx % 2 === 0 ? "right-8" : "left-8 xl:left-auto",
-        "xl:top-36 xl:-right-24 xl:w-[125px] xl:h-[30px]",
-        idx === 0 && "bg-line-1-mobile sm:bg-none xl:bg-line-1",
-        idx === 1 && "bg-line-2-mobile sm:bg-none xl:bg-line-2",
-        idx === 2 && "bg-line-3-mobile sm:bg-none xl:bg-line-3"
+        "absolute -bottom-20 xl:top-36 xl:-right-24 w-[70px] h-[70px] xl:w-[125px] xl:h-[30px] z-10 bg-no-repeat",
+        idx === 0 && "right-8 bg-line-1-mobile sm:bg-none xl:bg-line-1",
+        idx === 1 &&
+          "left-8 xl:left-auto bg-line-2-mobile sm:bg-none xl:bg-line-2",
+        idx === 2 && "right-8 bg-line-3-mobile sm:bg-none xl:bg-line-3",
+        idx === 3 && "hidden"
       )}
     />
   );
