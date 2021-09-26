@@ -36,7 +36,12 @@ export default function Home() {
             <div className="2xl:col-span-1 text-2xl 2xl:text-5xl">
               A Message From
             </div>
-            <div className="2xl:row-start-2 2xl:col-start-1 2xl:col-span-2 z-10 font-strawberry text-5xl 2xl:text-9xl leading-tight 2xl:-mt-6">
+            <div
+              style={{
+                backgroundPosition: "65% 50%",
+              }}
+              className="2xl:bg-subfooter-line bg-no-repeat 2xl:row-start-2 2xl:col-start-1 2xl:col-span-2 z-10 font-strawberry text-5xl 2xl:text-9xl leading-tight 2xl:-mt-6"
+            >
               Rodrigo Salazar-Kawer
             </div>
             <div className="2xl:row-start-3 space-y-8 mt-4">
@@ -56,15 +61,16 @@ export default function Home() {
                 <span className="font-bold">instructional designers</span> is an
                 art form we love.
               </div>
-              <div>
+              <div className="relative">
                 I know you may feel frustrated about the difficulty of finding
                 great people with the right skills and attitude. I’ll tell you a
                 secret: it just takes time and focus. Like you, the clients I
                 work with already have full-time jobs, so of course it&apos;s
                 hard to focus on sourcing great talent.
+                <div className="absolute 2xl:hidden w-44 h-44 bg-subfooter-line-mobile bg-no-repeat"></div>
               </div>
             </div>
-            <div className="h-80 sm:h-96 mt-20 2xl:mt-0 2xl:h-auto 2xl:col-start-2 2xl:row-start-1 2xl:row-span-3">
+            <div className="h-80 sm:h-96 mt-24 2xl:mt-0 2xl:h-auto 2xl:col-start-2 2xl:row-start-1 2xl:row-span-3">
               <div className="relative w-full h-full">
                 <Image
                   src={
@@ -77,7 +83,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative 2xl:col-start-3 2xl:row-start-2 text-center 2xl:text-right">
-              <div className="absolute left-0 -top-96 sm:left-auto sm:right-8 sm:-top-96 2xl:-left-16 2xl:-top-16">
+              <div className="absolute left-auto right-0 -top-96 sm:left-auto sm:right-8 sm:-top-96 2xl:-left-16 2xl:-top-16">
                 <Badge
                   name="Meet Rodrigo"
                   role="Director of Talent Solutions"
