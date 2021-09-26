@@ -5,6 +5,8 @@ import HoWeWork from "@/landing-page/HoWeWork";
 import WhyWorkWithUs from "@/landing-page/WhyWorkWithUs";
 
 import Image from "next/image";
+import Badge from "@/shared/Badge";
+import CTAButton from "@/shared/CTAButton";
 
 export default function Home() {
   return (
@@ -17,20 +19,19 @@ export default function Home() {
         <Roles />
         <HoWeWork />
         <WhyWorkWithUs />
-        <section className="h-screen py-20 bg-why-work-with-us-pattern bg-no-repeat bg-cover">
+        <section className="py-20 bg-why-work-with-us-pattern bg-no-repeat bg-cover">
           <div
             style={{
-              gridTemplateColumns: "1fr 500px 1fr",
+              gridTemplateColumns: "minmax(400px,1fr) 600px 200px",
+              gridTemplateRows: "70px 120px 1fr",
             }}
             className="max-w-screen-xl mx-auto grid text-white"
           >
-            <div className="col-span-1 row-start-1 text-6xl">
-              A Message From
-            </div>
-            <div className="col-span-2 row-start-2 font-strawberry text-9xl leading-tight -mt-2">
+            <div className="col-span-1 text-5xl">A Message From</div>
+            <div className="row-start-2 col-start-1 col-span-2 z-10 font-strawberry text-9xl leading-tight -mt-6">
               Rodrigo Salazar-Kawer
             </div>
-            <div className="row-start-3 space-y-4">
+            <div className="row-start-3 space-y-8 mt-4">
               <div className="font-bold">
                 who heads up our Talent Solutions team:
               </div>
@@ -55,39 +56,43 @@ export default function Home() {
                 hard to focus on sourcing great talent.
               </div>
             </div>
-            <div className="bg-red-500 relative col-start-2 col-span-1 w-full row-span-3 place-self-center">
-              <div className="absolute -left-16 -top-28 w-96 h-96">
-                <div className="relative w-full h-full">
-                  <Image
-                    src="/rodrigo3.png"
-                    alt=""
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
-              </div>
-              <div className="absolute -right-24 -top-64 w-96 h-96 z-10">
-                <div className="relative w-full h-full">
-                  <Image
-                    src="/rodrigo1.png"
-                    alt=""
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
-              </div>
-              <div className="absolute w-96 h-96 -right-12 top-0">
-                <div className="relative w-full h-full">
-                  <Image
-                    src="/rodrigo2.png"
-                    alt=""
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
+            <div className="col-start-2 row-start-1 row-span-3">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/rodrigo-desktop.png"
+                  alt=""
+                  layout="fill"
+                  objectFit="contain"
+                />
               </div>
             </div>
-            <div className="bg-yellow-400">a</div>
+            <div className="relative col-start-3 row-start-2 text-right">
+              <div className="absolute -left-16 -top-16">
+                <Badge
+                  name="Meet Rodrigo"
+                  role="Director of Talent Solutions"
+                  size="large"
+                />
+              </div>
+              <div className="mt-24 font-semibold text-xl text-[#ABD637]">
+                This is our focus, and if you need talent, we can help.
+              </div>
+              <div className="mt-8">
+                Please reach out. It would truly make my day to hear from and
+                help you.
+              </div>
+              <div className="mt-8">All the best,</div>
+              <Image
+                src="/signature.svg"
+                alt="signature"
+                width={100}
+                height={50}
+              />
+              <div className="mt-4">rodrigo@sweetrush.com</div>
+            </div>
+            <div className="col-start-1 col-span-2 place-self-center mt-20">
+              <CTAButton>Find My Perfect Fit Learning Professional</CTAButton>
+            </div>
           </div>
         </section>
         <section className="h-screen"></section>

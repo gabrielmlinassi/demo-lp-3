@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { FC } from "react";
 import cn from "classnames";
 
 import Heading from "@/shared/Heading";
 import CTAButton from "./shared/CTAButton";
+import Badge from "./shared/Badge";
 
 type Steps = {
   name?: string;
@@ -68,7 +68,9 @@ const HoWeWork = () => {
                 )}
               >
                 {step.name && step.role && (
-                  <Badge name={step.name} role={step.role} />
+                  <div className="absolute -left-24 -top-12 sm:-top-5 lg:left-auto lg:-right-32 lg:-top-8 2xl:-left-32 2xl:-top-5">
+                    <Badge name={step.name} role={step.role} />
+                  </div>
                 )}
                 <div className="p-3 bg-white inline-flex clip-path-inverted-hexagon">
                   <div className="inline-flex clip-path-inverted-hexagon">
@@ -103,22 +105,6 @@ const HoWeWork = () => {
         </div>
       </div>
     </section>
-  );
-};
-
-type BadgeProps = {
-  name: string;
-  role: string;
-};
-
-const Badge: FC<BadgeProps> = ({ name, role }) => {
-  return (
-    <div className="absolute -left-24 -top-12 sm:-top-5 lg:left-auto lg:-right-32 lg:-top-8 2xl:-left-32 2xl:-top-5 inline-flex flex-col items-center w-44 h-32 p-1 bg-bubble-texture bg-no-repeat bg-contain z-10">
-      <div className="font-strawberry text-4xl text-white">{name}</div>
-      <div className="text-sm w-3/4 text-center text-white leading-tight">
-        {role}
-      </div>
-    </div>
   );
 };
 
