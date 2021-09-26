@@ -1,24 +1,43 @@
 import { FC } from "react";
+import cn from "classnames";
 
 type HeadingProps = {
   highlightedTitle: string;
-  title: string;
-  subtitle: React.ReactNode;
+  title: React.ReactNode;
+  subtitle?: React.ReactNode;
+  className?: string;
+  color?: "white" | "purple";
+  alignment?: "left" | "center";
 };
 
-const Heading: FC<HeadingProps> = ({ highlightedTitle, title, subtitle }) => {
+const COLORS = {
+  white: "text-white",
+  purple: "text-[#5E6284]",
+};
+
+const TEXT_ALIGNMENT = {
+  left: "text-left",
+  center: "text-center",
+};
+
+const Heading: FC<HeadingProps> = ({
+  highlightedTitle,
+  title,
+  subtitle,
+  className,
+  color = "purple",
+  alignment = "center",
+}) => {
   return (
-    <>
-      <h1 className="text-center">
+    <div className={cn(className, COLORS[color], TEXT_ALIGNMENT[alignment])}>
+      <h1>
         <span className="font-strawberry text-8xl leading-[0] font-medium mr-2 text-transparent bg-clip-text bg-gradient-to-r from-[#5A4797] to-[#2364A4]">
           {highlightedTitle}
         </span>
-        <span className="text-[40px] leading-tight font-bold text-[#5E6284]">
-          {title}
-        </span>
+        <span className="text-[40px] leading-tight font-bold">{title}</span>
       </h1>
-      <p className="text-center text-[#5E6284] text-lg mt-4">{subtitle}</p>
-    </>
+      {subtitle && <p className="text-lg mt-4">{subtitle}</p>}
+    </div>
   );
 };
 
