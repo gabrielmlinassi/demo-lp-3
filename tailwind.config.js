@@ -6,6 +6,18 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      boxShadow: {
+        test: "0px 5px 6px 0px rgba(0,0,0,0.2)",
+      },
+      backgroundImage: {
+        "bubble-texture": 'url("/texture.svg")',
+        "line-1": 'url("/assets/line1.svg")',
+        "line-2": 'url("/assets/line2.svg")',
+        "line-3": 'url("/assets/line3.svg")',
+        "line-1-mobile": 'url("/assets/line1-mobile.svg")',
+        "line-2-mobile": 'url("/assets/line2-mobile.svg")',
+        "line-3-mobile": 'url("/assets/line3-mobile.svg")',
+      },
       maxWidth: {
         "screen-2xl": "90rem", // 1440px
         "screen-xl": "84.375rem", // 1350px
