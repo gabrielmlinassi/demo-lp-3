@@ -7,8 +7,20 @@ import WhyWorkWithUs from "@/landing-page/WhyWorkWithUs";
 import Image from "next/image";
 import Badge from "@/shared/Badge";
 import CTAButton from "@/shared/CTAButton";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [isMobile, setMobile] = useState(false);
+
+  const onResize = () => {
+    setMobile(window?.innerWidth <= 450);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   return (
     <>
       <header>
@@ -20,18 +32,14 @@ export default function Home() {
         <HoWeWork />
         <WhyWorkWithUs />
         <section className="py-20 bg-why-work-with-us-pattern bg-no-repeat bg-cover">
-          <div
-            style={{
-              gridTemplateColumns: "minmax(400px,1fr) 600px 200px",
-              gridTemplateRows: "70px 120px 1fr",
-            }}
-            className="max-w-screen-xl mx-auto grid text-white"
-          >
-            <div className="col-span-1 text-5xl">A Message From</div>
-            <div className="row-start-2 col-start-1 col-span-2 z-10 font-strawberry text-9xl leading-tight -mt-6">
+          <div className="grid 2xl:grid-rows-[70px,120px,1fr] 2xl:grid-cols-[minmax(400px,1fr),600px,200px] max-w-screen-xl mx-auto px-3 2xl:px-0 text-white text-center 2xl:text-left">
+            <div className="2xl:col-span-1 text-2xl 2xl:text-5xl">
+              A Message From
+            </div>
+            <div className="2xl:row-start-2 2xl:col-start-1 2xl:col-span-2 z-10 font-strawberry text-5xl 2xl:text-9xl leading-tight 2xl:-mt-6">
               Rodrigo Salazar-Kawer
             </div>
-            <div className="row-start-3 space-y-8 mt-4">
+            <div className="2xl:row-start-3 space-y-8 mt-4">
               <div className="font-bold">
                 who heads up our Talent Solutions team:
               </div>
@@ -56,25 +64,27 @@ export default function Home() {
                 hard to focus on sourcing great talent.
               </div>
             </div>
-            <div className="col-start-2 row-start-1 row-span-3">
+            <div className="h-80 mt-20 2xl:mt-0 2xl:h-auto 2xl:col-start-2 2xl:row-start-1 2xl:row-span-3">
               <div className="relative w-full h-full">
                 <Image
-                  src="/rodrigo-desktop.png"
+                  src={
+                    isMobile ? "/rodrigo-mobile.png" : "/rodrigo-desktop.png"
+                  }
                   alt=""
                   layout="fill"
                   objectFit="contain"
                 />
               </div>
             </div>
-            <div className="relative col-start-3 row-start-2 text-right">
-              <div className="absolute -left-16 -top-16">
+            <div className="relative 2xl:col-start-3 2xl:row-start-2 text-center 2xl:text-right">
+              <div className="absolute left-0 2xl:-left-16 -top-96 2xl:-top-16">
                 <Badge
                   name="Meet Rodrigo"
                   role="Director of Talent Solutions"
                   size="large"
                 />
               </div>
-              <div className="mt-24 font-semibold text-xl text-[#ABD637]">
+              <div className="mt-8 2xl:mt-24 font-semibold text-xl text-[#ABD637]">
                 This is our focus, and if you need talent, we can help.
               </div>
               <div className="mt-8">
@@ -90,7 +100,7 @@ export default function Home() {
               />
               <div className="mt-4">rodrigo@sweetrush.com</div>
             </div>
-            <div className="col-start-1 col-span-2 place-self-center mt-20">
+            <div className="hidden 2xl:block 2xl:col-start-1 2xl:col-span-2 place-self-center mt-20">
               <CTAButton>Find My Perfect Fit Learning Professional</CTAButton>
             </div>
           </div>

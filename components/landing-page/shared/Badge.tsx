@@ -3,7 +3,7 @@ import cn from "classnames";
 
 const Sizes = {
   base: "w-44 h-32 p-1",
-  large: "w-56 h-44 p-4",
+  large: "w-44 h-32 p-1 2xl:w-56 2xl:h-44 2xl:p-4",
 };
 
 type BadgeProps = {
