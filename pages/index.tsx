@@ -19,7 +19,6 @@ export default function Home() {
         <WhyWorkWithUs />
         <SubFooter />
         <Footer />
-        <section className="h-screen"></section>
       </main>
       <footer></footer>
     </>
