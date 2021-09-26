@@ -64,7 +64,7 @@ export default function Home() {
                 hard to focus on sourcing great talent.
               </div>
             </div>
-            <div className="h-80 mt-20 2xl:mt-0 2xl:h-auto 2xl:col-start-2 2xl:row-start-1 2xl:row-span-3">
+            <div className="h-80 sm:h-96 mt-20 2xl:mt-0 2xl:h-auto 2xl:col-start-2 2xl:row-start-1 2xl:row-span-3">
               <div className="relative w-full h-full">
                 <Image
                   src={
@@ -77,7 +77,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative 2xl:col-start-3 2xl:row-start-2 text-center 2xl:text-right">
-              <div className="absolute left-0 2xl:-left-16 -top-96 2xl:-top-16">
+              <div className="absolute left-0 -top-96 sm:left-auto sm:right-8 sm:-top-96 2xl:-left-16 2xl:-top-16">
                 <Badge
                   name="Meet Rodrigo"
                   role="Director of Talent Solutions"
