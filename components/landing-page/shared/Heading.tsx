@@ -6,11 +6,17 @@ type HeadingProps = {
   title: React.ReactNode;
   subtitle?: React.ReactNode;
   className?: string;
-  color?: "white" | "purple";
+  titleColor?: "white" | "purple";
+  highlightedTitleColor?: "green" | "purple";
   alignment?: "left" | "center";
 };
 
-const COLORS = {
+const HIGHLIGHTED_TITLE_COLORS = {
+  green: "bg-gradient-to-r from-[#42BEAD] via-[#3EA57B] to-[#3CA06F]",
+  purple: "bg-gradient-to-r from-[#5A4797] to-[#2364A4]",
+};
+
+const TITLE_COLORS = {
   white: "text-white",
   purple: "text-[#5E6284]",
 };
@@ -25,18 +31,30 @@ const Heading: FC<HeadingProps> = ({
   title,
   subtitle,
   className,
-  color = "purple",
+  titleColor = "purple",
+  highlightedTitleColor = "purple",
   alignment = "center",
 }) => {
   return (
-    <div className={cn(className, COLORS[color], TEXT_ALIGNMENT[alignment])}>
+    <div
+      className={cn(
+        className,
+        TITLE_COLORS[titleColor],
+        TEXT_ALIGNMENT[alignment]
+      )}
+    >
       <h1>
-        <span className="font-strawberry text-8xl leading-[0] font-medium mr-2 text-transparent bg-clip-text bg-gradient-to-r from-[#5A4797] to-[#2364A4]">
+        <span
+          className={cn(
+            "inline-block -mt-3 font-strawberry z-10 relative text-8xl font-medium mr-2 text-transparent bg-clip-text",
+            HIGHLIGHTED_TITLE_COLORS[highlightedTitleColor]
+          )}
+        >
           {highlightedTitle}
         </span>
-        <span className="text-[40px] leading-tight font-bold">{title}</span>
+        <span className="text-[40px] leading-3 z-0 font-bold">{title}</span>
       </h1>
-      {subtitle && <p className="text-lg mt-4">{subtitle}</p>}
+      {subtitle && <p className="text-lg ">{subtitle}</p>}
     </div>
   );
 };

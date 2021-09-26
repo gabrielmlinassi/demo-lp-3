@@ -19,7 +19,8 @@ export default function Home() {
           <div></div>
           <div>
             <Heading
-              color="white"
+              titleColor="white"
+              highlightedTitleColor="green"
               alignment="left"
               highlightedTitle="Why"
               title={
