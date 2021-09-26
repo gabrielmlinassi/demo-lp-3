@@ -11,6 +11,8 @@ module.exports = {
       },
       backgroundImage: {
         "bubble-texture": 'url("/texture.svg")',
+        "why-work-with-us-pattern":
+          "url('/why-work-with-us-texture.png'), linear-gradient(90deg, #42BEAD 0.01%, #3195AC 43.79%, #2364A4 100.04%)",
         "line-1": 'url("/assets/line1.svg")',
         "line-2": 'url("/assets/line2.svg")',
         "line-3": 'url("/assets/line3.svg")',
