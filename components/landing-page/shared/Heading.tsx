@@ -40,21 +40,24 @@ const Heading: FC<HeadingProps> = ({
       className={cn(
         className,
         TITLE_COLORS[titleColor],
-        TEXT_ALIGNMENT[alignment]
+        TEXT_ALIGNMENT[alignment],
+        "pb-4"
       )}
     >
       <h1>
         <span
           className={cn(
-            "inline-block -mt-3 font-strawberry z-10 relative text-8xl font-medium mr-2 text-transparent bg-clip-text",
+            "inline-block -mt-3 font-strawberry z-10 relative text-7xl sm:text-8xl font-medium mr-2 text-transparent bg-clip-text",
             HIGHLIGHTED_TITLE_COLORS[highlightedTitleColor]
           )}
         >
           {highlightedTitle}
         </span>
-        <span className="text-[40px] leading-3 z-0 font-bold">{title}</span>
+        <span className="text-[30px] sm:text-[40px] leading-3 z-0 font-bold">
+          {title}
+        </span>
       </h1>
-      {subtitle && <p className="text-lg ">{subtitle}</p>}
+      {subtitle && <p className="text-lg">{subtitle}</p>}
     </div>
   );
 };
