@@ -63,7 +63,7 @@ const SubFooter = () => {
           </div>
         </div>
         <div className="relative xl:col-start-3 xl:row-start-2 text-center xl:text-right">
-          <div className="absolute left-auto right-0 -top-96 sm:left-auto sm:right-8 sm:-top-96 2xl:-left-16 2xl:-top-16">
+          <div className="absolute left-auto right-0 -top-96 sm:left-auto sm:right-8 xl:right-auto xl:-left-16 xl:-top-20 2xl:-top-16">
             <Badge
               name="Meet Rodrigo"
               role="Director of Talent Solutions"
