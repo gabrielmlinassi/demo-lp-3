@@ -6,7 +6,10 @@ import Heading from "@/shared/Heading";
 
 const Roles = () => {
   return (
-    <section className="max-w-screen-xl mx-auto pb-16 pt-24 sm:px-3 xl:px-0">
+    <section
+      id="roles"
+      className="max-w-screen-xl mx-auto pb-16 pt-24 sm:px-3 xl:px-0"
+    >
       <Heading
         highlightedTitle="Roles"
         title="We Place"

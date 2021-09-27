@@ -4,7 +4,10 @@ import Image from "next/image";
 
 const WhyWorkWithUs = () => {
   return (
-    <section className="pt-16 sm:pt-32 pr-0 sm:pr-6 2xl:pr-0 bg-gradient-to-r from-[#192024] to-[#3D4E57]">
+    <section
+      id="why-work-with-us"
+      className="pt-16 sm:pt-32 pr-0 sm:pr-6 2xl:pr-0 bg-gradient-to-r from-[#192024] to-[#3D4E57]"
+    >
       <div className="relative overflow-hidden">
         <div className="pb-32 sm:pb-32 grid grid-cols-2 max-w-screen-xl mx-auto">
           <div>
