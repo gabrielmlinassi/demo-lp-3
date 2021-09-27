@@ -13,8 +13,6 @@ type BadgeProps = {
 };
 
 const Badge: FC<BadgeProps> = ({ name, role, size = "base" }) => {
-  console.log({ name, size });
-
   return (
     <div
       className={cn(
