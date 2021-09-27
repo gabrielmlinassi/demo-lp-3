@@ -113,7 +113,8 @@ const Card: FC<CardProps> = ({ description, color }) => {
   return (
     <div
       className={cn(
-        "group odd:mt-8 relative flex flex-col items-center w-64 h-96 px-5 pt-10 bg-[#F1F2F4] rounded-xl border-6 cursor-default",
+        "group odd:mt-8 relative flex flex-col items-center w-64 h-96 px-5 pt-10 rounded-xl border-6 cursor-default",
+        !isFlipped ? "bg-[#F1F2F4]" : "bg-yellow-200",
         BorderColors[color]
       )}
       onMouseEnter={() => setSrc("/sr-heart-white.svg")}
@@ -121,7 +122,8 @@ const Card: FC<CardProps> = ({ description, color }) => {
     >
       <div
         className={cn(
-          "inline-flex p-4 rounded-full border-4 border-white",
+          !isFlipped ? "inline-flex" : "hidden",
+          "p-4 rounded-full border-4 border-white",
           HoverColors[color]
         )}
       >
@@ -133,11 +135,14 @@ const Card: FC<CardProps> = ({ description, color }) => {
           objectFit="contain"
         />
       </div>
-      <div className="text-center text-[#5E6284] font-bold mt-4">
-        {description}
+      <div className={cn("text-center text-[#5E6284] font-bold mt-4")}>
+        {!isFlipped ? description : "flipped"}
       </div>
       <div className="absolute bottom-6 right-4">
-        <div className="p-2 rounded-full shadow-xl cursor-pointer bg-white">
+        <div
+          onClick={() => setFlipped((prev) => !prev)}
+          className="p-2 rounded-full shadow-xl cursor-pointer bg-white"
+        >
           <FlipIcon />
         </div>
       </div>
