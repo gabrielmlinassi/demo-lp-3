@@ -1,30 +1,42 @@
-import { FC, HTMLAttributes } from "react";
+import { useState } from "react";
 import cn from "classnames";
 
-const BgColors = {
-  green: "bg-green-400",
-  red: "bg-red-400",
-  yellow: "bg-yellow-400",
-};
-
-type Component2Props = {
-  bgColor?: keyof typeof BgColors;
-};
-
-const Component2: FC<Component2Props> = ({ bgColor = "red" }) => {
-  return <div className={BgColors[bgColor]}>test gabriel</div>;
-};
-
-const Component: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
-  return <div className={cn(props.className, "bg-red-500")}>test gabriel</div>;
-};
-
 export default function Test2() {
+  const [isHovering, setHovering] = useState(false);
+
   return (
-    <>
-      <Component2 bgColor="green" />
-      <Component2 />
-      <Component className="bg-yellow-400" />
-    </>
+    <div>
+      <div
+        style={{ perspective: "1000px" }}
+        onMouseEnter={() => setHovering(true)}
+        onMouseLeave={() => setHovering(false)}
+        className="w-96 h-96 border-2"
+      >
+        <div
+          style={{
+            transformStyle: "preserve-3d",
+            transform: isHovering ? "rotateY(180deg)" : "none",
+          }}
+          className="relative w-full h-full transition-transform duration-700"
+        >
+          <div
+            style={{
+              backfaceVisibility: "hidden",
+            }}
+            className="absolute w-full h-full bg-yellow-200"
+          >
+            front
+          </div>
+          <div
+            style={{
+              transform: "rotateY(180deg)",
+            }}
+            className="absolute w-full h-full bg-red-500"
+          >
+            back
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

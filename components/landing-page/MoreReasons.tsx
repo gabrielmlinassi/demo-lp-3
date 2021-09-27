@@ -85,6 +85,14 @@ enum Colors {
   victoria = "Victoria",
 }
 
+const BgColors = {
+  atlantis: "bg-[#ABD637]",
+  oceanGreen: "bg-[#3DA06E]",
+  puertoRico: "bg-[#3CBFAE]",
+  matisse: "bg-[#2263A3]",
+  victoria: "bg-[#594697]",
+};
+
 const HoverColors = {
   atlantis: "group-hover:bg-[#ABD637]",
   oceanGreen: "group-hover:bg-[#3DA06E]",
@@ -112,38 +120,69 @@ const Card: FC<CardProps> = ({ description, color }) => {
 
   return (
     <div
-      className={cn(
-        "group odd:mt-8 relative flex flex-col items-center w-64 h-96 px-5 pt-10 rounded-xl border-6 cursor-default",
-        !isFlipped ? "bg-[#F1F2F4]" : "bg-yellow-200",
-        BorderColors[color]
-      )}
-      onMouseEnter={() => setSrc("/sr-heart-white.svg")}
-      onMouseLeave={() => setSrc("/sr-heart.svg")}
+      style={{
+        perspective: "1000px",
+      }}
+      className="w-64 h-96"
     >
       <div
+        style={{
+          transformStyle: "preserve-3d",
+          transform: isFlipped ? "rotateY(180deg)" : "none",
+        }}
         className={cn(
-          !isFlipped ? "inline-flex" : "hidden",
-          "p-4 rounded-full border-4 border-white",
-          HoverColors[color]
+          "group w-full h-full transition-transform duration-700",
+          "odd:mt-8 flex flex-col items-center px-5 pt-10 rounded-xl border-6 cursor-default",
+          !isFlipped ? "bg-[#F1F2F4]" : BgColors[color],
+          BorderColors[color]
         )}
+        onMouseEnter={() => setSrc("/sr-heart-white.svg")}
+        onMouseLeave={() => setSrc("/sr-heart.svg")}
       >
-        <Image
-          src={src}
-          alt="sweetrush heart logo"
-          width={60}
-          height={60}
-          objectFit="contain"
-        />
-      </div>
-      <div className={cn("text-center text-[#5E6284] font-bold mt-4")}>
-        {!isFlipped ? description : "flipped"}
-      </div>
-      <div className="absolute bottom-6 right-4">
         <div
-          onClick={() => setFlipped((prev) => !prev)}
-          className="p-2 rounded-full shadow-xl cursor-pointer bg-white"
+          className={cn(
+            !isFlipped ? "inline-flex" : "hidden",
+            "p-4 rounded-full border-4 border-white",
+            HoverColors[color]
+          )}
         >
-          <FlipIcon />
+          <Image
+            src={src}
+            alt="sweetrush heart logo"
+            width={60}
+            height={60}
+            objectFit="contain"
+          />
+        </div>
+        <div className={cn("text-center text-[#5E6284] font-bold mt-4")}>
+          {!isFlipped ? (
+            description
+          ) : (
+            <div
+              style={{
+                transform: "rotateY(180deg)",
+              }}
+              className="text-white"
+            >
+              We are constantly working under time pressure ourselves, and we
+              excel at finding people who can meet that challenge. Bringing
+              extra hands on board will build your capacity and help you develop
+              and deploy projects faster.
+            </div>
+          )}
+        </div>
+        <div
+          style={{
+            transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          }}
+          className={cn("absolute bottom-6", isFlipped ? "left-4" : "right-4")}
+        >
+          <div
+            onClick={() => setFlipped((prev) => !prev)}
+            className="p-2 rounded-full shadow-xl cursor-pointer bg-white transition-transform duration-300 hover:scale-110"
+          >
+            <FlipIcon />
+          </div>
         </div>
       </div>
     </div>
