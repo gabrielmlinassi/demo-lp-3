@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-const useDevices = () => {
+export const useDevices = () => {
   const [isMobile, setMobile] = useState(false);
 
   const onResize = () => {
-    setMobile(window?.innerWidth <= 450);
+    setMobile(window?.outerWidth <= 450);
   };
 
   useEffect(() => {
@@ -14,5 +14,3 @@ const useDevices = () => {
 
   return { isMobile };
 };
-
-export default useDevices;
