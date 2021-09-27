@@ -35,7 +35,7 @@ const steps: Steps[] = [
 
 const HoWeWork = () => {
   return (
-    <section className="bg-[#F1F2F4] min-h-screen">
+    <section id="how-we-work" className="bg-[#F1F2F4] min-h-screen">
       <div className="max-w-screen-xl mx-auto pt-8 pb-16 xl:pt-24 sm:px-3 xl:px-0">
         <Heading
           highlightedTitle="How"

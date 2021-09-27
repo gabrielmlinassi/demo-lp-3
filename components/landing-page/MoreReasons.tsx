@@ -14,7 +14,7 @@ const MoreReasons = () => {
   console.log({ isMobile });
 
   return (
-    <section className="max-w-screen-xl mx-auto py-20">
+    <section className="max-w-screen-xl mx-auto py-20 xl:px-6 2xl:px-0">
       <Heading
         highlightedTitle="5 More Reasons"
         title="You'll Love Working With Us"
@@ -120,7 +120,7 @@ export const Card: FC<CardProps> = ({
       style={{
         perspective: "1000px",
       }}
-      className="w-64 h-96"
+      className="w-64 h-[400px]"
       onMouseEnter={() => setSrc("/sr-heart-white.svg")}
       onMouseLeave={() => setSrc("/sr-heart.svg")}
     >

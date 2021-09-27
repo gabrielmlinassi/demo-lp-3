@@ -4,9 +4,12 @@ import Badge from "@/shared/Badge";
 import CTAButton from "@/shared/CTAButton";
 import { isMobile } from "react-device-detect";
 
-const SubFooter = () => {
+const MeetRodrigo = () => {
   return (
-    <section className="py-20 px-6 bg-why-work-with-us-pattern bg-no-repeat bg-cover">
+    <section
+      id="meet-rodrigo"
+      className="py-20 px-6 bg-why-work-with-us-pattern bg-no-repeat bg-cover"
+    >
       <div
         className={cn(
           "max-w-screen-xl mx-auto",
@@ -63,7 +66,7 @@ const SubFooter = () => {
           </div>
         </div>
         <div className="relative xl:col-start-3 xl:row-start-2 text-center xl:text-right">
-          <div className="absolute left-auto right-0 -top-96 sm:left-auto sm:right-8 sm:-top-96 2xl:-left-16 2xl:-top-16">
+          <div className="absolute left-auto right-0 -top-96 sm:left-auto sm:right-8 xl:right-auto xl:-left-16 xl:-top-20 2xl:-top-16">
             <Badge
               name="Meet Rodrigo"
               role="Director of Talent Solutions"
@@ -89,4 +92,4 @@ const SubFooter = () => {
   );
 };
 
-export default SubFooter;
+export default MeetRodrigo;

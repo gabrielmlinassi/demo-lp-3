@@ -101,10 +101,10 @@ export const Navbar = () => {
 
 const navigation = [
   { name: "Build Your Team", href: "#", current: true },
-  { name: "Roles We Place", href: "#", current: false },
-  { name: "How We Work With You", href: "#", current: false },
-  { name: "Why Work With Us?", href: "#", current: false },
-  { name: "Meet Rodrigo", href: "#", current: false },
+  { name: "Roles We Place", href: "#roles", current: false },
+  { name: "How We Work With You", href: "#how-we-work", current: false },
+  { name: "Why Work With Us?", href: "#why-work-with-us", current: false },
+  { name: "Meet Rodrigo", href: "#meet-rodrigo", current: false },
 ];
 
 export default Navbar;

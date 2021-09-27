@@ -3,9 +3,9 @@ import Hero from "@/landing-page/Hero";
 import Roles from "@/landing-page/Roles";
 import HoWeWork from "@/landing-page/HoWeWork";
 import WhyWorkWithUs from "@/landing-page/WhyWorkWithUs";
-import SubFooter from "@/landing-page/SubFooter";
 import Footer from "@/landing-page/Footer";
 import MoreReasons from "@/landing-page/MoreReasons";
+import MeetRodrigo from "@/landing-page/MeetRodrigo";
 
 export default function Home() {
   return (
@@ -18,11 +18,12 @@ export default function Home() {
         <Roles />
         <HoWeWork />
         <WhyWorkWithUs />
-        {/* <MoreReasons /> */}
-        <SubFooter />
-        <Footer />
+        <MoreReasons />
+        <MeetRodrigo />
       </main>
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }
