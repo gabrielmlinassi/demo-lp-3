@@ -13,3 +13,26 @@
     @apply before:absolute before:top-1/2 before:-right-full before:transform before:-translate-y-1/2 before:w-[125px] before:h-[30px] before:bg-line-1 before:bg-no-repeat;
   }
 }
+
+/* width */
+::-webkit-scrollbar {
+  /* width: 5px; */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* border-radius: 100vh;
+  background: rgba(0, 0, 0, 0.25); */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: #cbd5e0;
+  border-radius: 100vh;
+  border: 3px solid #edf2f7; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  /* background: #a0aec0; */
+}

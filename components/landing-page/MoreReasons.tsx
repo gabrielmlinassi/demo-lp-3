@@ -30,6 +30,14 @@ const MoreReasons = () => {
               it—and here’s how we help.
             </>
           }
+          backDescription={
+            <>
+              We are constantly working under time pressure ourselves, and we
+              excel at finding people who can meet that challenge. Bringing
+              extra hands on board will build your capacity and help you develop
+              and deploy projects faster.
+            </>
+          }
           color="atlantis"
         />
         <Card
@@ -39,6 +47,14 @@ const MoreReasons = () => {
               <span className="text-[#3DA06E]">extremely well.</span>
             </>
           }
+          backDescription={
+            <>
+              One happy candidate will be chosen to augment your team, but
+              hundreds will be rejected. At SweetRush, we are obsessive about
+              treating people kindly and with consideration and empathy. We will
+              represent you and your brand the way you’d want it to be.
+            </>
+          }
           color="oceanGreen"
         />
         <Card
@@ -46,6 +62,14 @@ const MoreReasons = () => {
             <>
               <span className="text-[#3CBFAE]">Remote talent?</span> We know how
               to make it work—fully remote 11 years, unified and successful.
+            </>
+          }
+          backDescription={
+            <>
+              You will not encounter a more unified, connected, and
+              high-performing team (200 people strong!)—and we’ve been 100%
+              remote since 2009. We know remote work and how to set up remote
+              talent and teams for success.
             </>
           }
           color="puertoRico"
@@ -58,6 +82,16 @@ const MoreReasons = () => {
               —we’ve got the talent.
             </>
           }
+          backDescription={
+            <>
+              We’re dedicated to creating equitable and inclusive workplaces,
+              seeking out diverse talent through our recruiting practices. From
+              instructional designers with DEIB expertise, to experienced
+              facilitators who can guide conversations on sensitive topics, to
+              gender-neutral voice-over talent, we can deliver the right talent
+              for you.
+            </>
+          }
           color="matisse"
         />
         <Card
@@ -65,6 +99,16 @@ const MoreReasons = () => {
             <>
               Why is the SweetRush logo a heart?{" "}
               <span className="text-[#594697]">Because we care!</span>
+            </>
+          }
+          backDescription={
+            <>
+              We live in a complicated world in the best of times, and now we
+              all share added layers of uncertainty and stress. We feel it and
+              we know you do. Since the day we opened in 2001, we’ve focused on
+              caring and empathy. Now more than ever, all of us need to be
+              united and take care of each other, and you can always count on us
+              to act accordingly.
             </>
           }
           color="victoria"
@@ -111,10 +155,11 @@ const BorderColors = {
 
 type CardProps = {
   description: React.ReactNode;
+  backDescription: React.ReactNode;
   color: keyof typeof Colors;
 };
 
-const Card: FC<CardProps> = ({ description, color }) => {
+const Card: FC<CardProps> = ({ description, backDescription, color }) => {
   const [src, setSrc] = useState("/sr-heart.svg");
   const [isFlipped, setFlipped] = useState(false);
 
@@ -124,6 +169,8 @@ const Card: FC<CardProps> = ({ description, color }) => {
         perspective: "1000px",
       }}
       className="w-64 h-96"
+      onMouseEnter={() => setSrc("/sr-heart-white.svg")}
+      onMouseLeave={() => setSrc("/sr-heart.svg")}
     >
       <div
         style={{
@@ -132,12 +179,12 @@ const Card: FC<CardProps> = ({ description, color }) => {
         }}
         className={cn(
           "group w-full h-full transition-transform duration-700",
-          "odd:mt-8 flex flex-col items-center px-5 pt-10 rounded-xl border-6 cursor-default",
-          !isFlipped ? "bg-[#F1F2F4]" : BgColors[color],
+          "odd:mt-8 flex flex-col items-center rounded-xl border-6 cursor-default",
+          isFlipped
+            ? `${BgColors[color]} px-4 pt-6`
+            : "bg-[#F1F2F4] px-5 pt-10",
           BorderColors[color]
         )}
-        onMouseEnter={() => setSrc("/sr-heart-white.svg")}
-        onMouseLeave={() => setSrc("/sr-heart.svg")}
       >
         <div
           className={cn(
@@ -154,7 +201,12 @@ const Card: FC<CardProps> = ({ description, color }) => {
             objectFit="contain"
           />
         </div>
-        <div className={cn("text-center text-[#5E6284] font-bold mt-4")}>
+        <div
+          className={cn(
+            "text-center text-[#5E6284] font-bold",
+            isFlipped ? "mt-0  " : "mt-4"
+          )}
+        >
           {!isFlipped ? (
             description
           ) : (
@@ -162,12 +214,9 @@ const Card: FC<CardProps> = ({ description, color }) => {
               style={{
                 transform: "rotateY(180deg)",
               }}
-              className="text-white"
+              className="text-white font-medium text-sm"
             >
-              We are constantly working under time pressure ourselves, and we
-              excel at finding people who can meet that challenge. Bringing
-              extra hands on board will build your capacity and help you develop
-              and deploy projects faster.
+              {backDescription}
             </div>
           )}
         </div>
