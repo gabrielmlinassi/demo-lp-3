@@ -18,7 +18,7 @@ export default function Home() {
         <Roles />
         <HoWeWork />
         <WhyWorkWithUs />
-        <MoreReasons />
+        {/* <MoreReasons /> */}
         <SubFooter />
         <Footer />
       </main>
