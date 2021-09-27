@@ -1,3 +1,4 @@
+import cn from "classnames";
 import Image from "next/image";
 import Badge from "@/shared/Badge";
 import CTAButton from "@/shared/CTAButton";
@@ -5,20 +6,27 @@ import { isMobile } from "react-device-detect";
 
 const SubFooter = () => {
   return (
-    <section className="py-20 bg-why-work-with-us-pattern bg-no-repeat bg-cover">
-      <div className="grid 2xl:grid-rows-[70px,120px,1fr] 2xl:grid-cols-[minmax(400px,1fr),600px,200px] max-w-screen-xl mx-auto px-3 2xl:px-0 text-white text-center 2xl:text-left">
-        <div className="2xl:col-span-1 text-2xl 2xl:text-5xl">
-          A Message From
-        </div>
+    <section className="py-20 px-6 bg-why-work-with-us-pattern bg-no-repeat bg-cover">
+      <div
+        className={cn(
+          "max-w-screen-xl mx-auto",
+          "grid xl:grid-rows-[70px,120px,1fr] xl:grid-cols-[minmax(400px,1fr),600px,200px]",
+          "px-3 xl:px-0 text-white text-center xl:text-left"
+        )}
+      >
+        <div className="xl:col-span-1 text-2xl xl:text-5xl">A Message From</div>
         <div
-          style={{
-            backgroundPosition: "65% 50%",
-          }}
-          className="2xl:bg-subfooter-line bg-no-repeat 2xl:row-start-2 2xl:col-start-1 2xl:col-span-2 z-10 font-strawberry text-5xl 2xl:text-9xl leading-tight 2xl:-mt-6"
+          className={cn(
+            "xl:row-start-2 xl:col-start-1 xl:col-span-2",
+            "xl:-mt-6 font-strawberry text-5xl xl:text-9xl leading-tight"
+          )}
         >
-          Rodrigo Salazar-Kawer
+          <span className="relative">
+            Rodrigo Salazar-Kawer
+            <div className="absolute w-24 h-24 xl:-right-10 xl:-top-4 2xl:-right-20 z-10 xl:bg-subfooter-line bg-no-repeat"></div>
+          </span>
         </div>
-        <div className="2xl:row-start-3 space-y-8 mt-4">
+        <div className="xl:row-start-3 space-y-8 mt-4">
           <div className="font-bold">
             who heads up our Talent Solutions team:
           </div>
@@ -41,10 +49,10 @@ const SubFooter = () => {
             it just takes time and focus. Like you, the clients I work with
             already have full-time jobs, so of course it&apos;s hard to focus on
             sourcing great talent.
-            <div className="absolute 2xl:hidden w-44 h-44 bg-subfooter-line-mobile bg-no-repeat"></div>
+            <div className="absolute xl:hidden w-44 h-44 bg-subfooter-line-mobile bg-no-repeat"></div>
           </div>
         </div>
-        <div className="h-80 sm:h-96 mt-24 2xl:mt-0 2xl:h-auto 2xl:col-start-2 2xl:row-start-1 2xl:row-span-3">
+        <div className="xl:col-start-2 xl:row-start-1 xl:row-span-3 h-80 sm:h-96 xl:h-auto mt-24 xl:mt-0">
           <div className="relative w-full h-full">
             <Image
               src={isMobile ? "/rodrigo-mobile.png" : "/rodrigo-desktop.png"}
@@ -54,7 +62,7 @@ const SubFooter = () => {
             />
           </div>
         </div>
-        <div className="relative 2xl:col-start-3 2xl:row-start-2 text-center 2xl:text-right">
+        <div className="relative xl:col-start-3 xl:row-start-2 text-center xl:text-right">
           <div className="absolute left-auto right-0 -top-96 sm:left-auto sm:right-8 sm:-top-96 2xl:-left-16 2xl:-top-16">
             <Badge
               name="Meet Rodrigo"
