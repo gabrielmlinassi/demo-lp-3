@@ -70,7 +70,7 @@ const MoreReasons = () => {
           color="victoria"
         />
       </div>
-      <div className="flex items-center justify-center mt-20">
+      <div className="flex items-center justify-center mt-28">
         <CTAButton>Find My Perfect Fit Learning Professional</CTAButton>
       </div>
     </section>
