@@ -5,6 +5,7 @@ import HoWeWork from "@/landing-page/HoWeWork";
 import WhyWorkWithUs from "@/landing-page/WhyWorkWithUs";
 import SubFooter from "@/landing-page/SubFooter";
 import Footer from "@/landing-page/Footer";
+import MoreReasons from "@/landing-page/MoreReasons";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Roles />
         <HoWeWork />
         <WhyWorkWithUs />
+        <MoreReasons />
         <SubFooter />
         <Footer />
       </main>

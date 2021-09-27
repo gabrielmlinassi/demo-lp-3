@@ -9,6 +9,9 @@ module.exports = {
       boxShadow: {
         test: "0px 5px 6px 0px rgba(0,0,0,0.2)",
       },
+      borderWidth: {
+        6: "6px",
+      },
       backgroundImage: {
         "bubble-texture": 'url("/texture.svg")',
         "subfooter-line": 'url("/subfooter-arrow.svg")',
