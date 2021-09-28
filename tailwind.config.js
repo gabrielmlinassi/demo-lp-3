@@ -30,7 +30,7 @@ module.exports = {
         "screen-xl": "84.375rem", // 1350px
       },
       fontFamily: {
-        strawberry: ["Strawberry Blossom"],
+        strawberry: ["Strawberry Blossom", "Brush Script MT", "cursive"],
       },
       fontSize: {
         "9xl": "7.5rem",
