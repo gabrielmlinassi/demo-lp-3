@@ -7,10 +7,9 @@ import { useDevices } from "hooks/useDevices";
 
 const MoreReasons = () => {
   const { isMobile } = useDevices();
-  console.log({ isMobile });
 
   return (
-    <section className="max-w-screen-xl mx-auto py-20 xl:px-6 2xl:px-0">
+    <section className="max-w-screen-xl mx-auto pt-20 pb-10 xl:px-6 2xl:px-0">
       <Heading
         highlightedTitle="5 More Reasons"
         title="You'll Love Working With Us"
@@ -26,25 +25,18 @@ const MoreReasons = () => {
         }
       />
       {isMobile ? (
-        <div className="bg-green-300">
-          <Swiper
-            spaceBetween={-25}
-            slidesPerView={1.25}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
-          >
-            {items.map((item, key) => (
-              <SwiperSlide key={key} className="py-8 pl-4">
-                <Card
-                  key={key}
-                  description={item.description}
-                  backDescription={item.backDescription}
-                  color={item.color}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        <Swiper spaceBetween={-25} slidesPerView={1.25}>
+          {items.map((item, key) => (
+            <SwiperSlide key={key} className="py-8 pl-4">
+              <Card
+                key={key}
+                description={item.description}
+                backDescription={item.backDescription}
+                color={item.color}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       ) : (
         <div className="flex items-start justify-center space-x-4 mt-8">
           {items.map((item, key) => (
@@ -58,7 +50,7 @@ const MoreReasons = () => {
         </div>
       )}
 
-      <div className="flex items-center justify-center mt-28">
+      <div className="hidden xl:flex items-center justify-center xl:mt-28">
         <CTAButton>Find My Perfect Fit Learning Professional</CTAButton>
       </div>
     </section>
