@@ -48,11 +48,11 @@ const FrontFace = ({ description, color, setFlipped }) => {
     <div
       className={cn(
         "w-full h-full border-6 rounded-xl cursor-default px-5 pt-10",
-        "group flex flex-col items-center bg-[#F1F2F4]",
+        "relative group flex flex-col items-center bg-[#F1F2F4]",
         BorderColors[color]
       )}
-      onMouseEnter={() => setSrc("/sr-heart-white.svg")}
-      onMouseLeave={() => setSrc("/sr-heart.svg")}
+      // onMouseEnter={() => setSrc("/sr-heart-white.svg")}
+      // onMouseLeave={() => setSrc("/sr-heart.svg")}
     >
       <div
         className={cn(
@@ -80,7 +80,7 @@ const BackFace = ({ backDescription, color, setFlipped }) => {
   return (
     <div
       className={cn(
-        "w-full h-full border-6 rounded-xl cursor-default px-5 pt-10",
+        "relative w-full h-full border-6 rounded-xl cursor-default px-5 pt-10",
         BorderColors[color],
         BgColors[color]
       )}
@@ -118,30 +118,18 @@ export const Card: FC<CardProps> = ({
       <div className={`w-64 h-[400px] flip-card ${isFlipped && "flipped"}`}>
         <div className="flip-card-inner">
           <div className="flip-card-front">
-            <div
-              className="w-full h-full bg-red-500"
-              onClick={() => setFlipped((prev) => !prev)}
-            >
-              front
-            </div>
-            {/* <FrontFace
+            <FrontFace
               description={description}
               color={color}
               setFlipped={setFlipped}
-            /> */}
+            />
           </div>
           <div className="flip-card-back">
-            <div
-              className="w-full h-full bg-green-500"
-              onClick={() => setFlipped((prev) => !prev)}
-            >
-              back
-            </div>
-            {/* <BackFace
+            <BackFace
               backDescription={backDescription}
               color={color}
               setFlipped={setFlipped}
-            /> */}
+            />
           </div>
         </div>
       </div>
