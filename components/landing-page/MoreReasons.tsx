@@ -9,7 +9,7 @@ const MoreReasons = () => {
   const { isMobile } = useDevices();
 
   return (
-    <section className="max-w-screen-xl mx-auto py-20 xl:px-6 2xl:px-0">
+    <section className="max-w-screen-xl mx-auto pt-20 pb-10 xl:px-6 2xl:px-0">
       <Heading
         highlightedTitle="5 More Reasons"
         title="You'll Love Working With Us"
@@ -50,7 +50,7 @@ const MoreReasons = () => {
         </div>
       )}
 
-      <div className="flex items-center justify-center mt-28">
+      <div className="hidden xl:flex items-center justify-center xl:mt-28">
         <CTAButton>Find My Perfect Fit Learning Professional</CTAButton>
       </div>
     </section>

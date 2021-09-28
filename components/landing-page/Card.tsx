@@ -110,23 +110,21 @@ const Card: FC<CardProps> = ({ description, backDescription, color }) => {
   const [isFlipped, setFlipped] = useState(false);
 
   return (
-    <div>
-      <div className={`w-64 h-[400px] flip-card ${isFlipped && "flipped"}`}>
-        <div className="flip-card-inner">
-          <div className="flip-card-front">
-            <FrontFace
-              description={description}
-              color={color}
-              setFlipped={setFlipped}
-            />
-          </div>
-          <div className="flip-card-back">
-            <BackFace
-              backDescription={backDescription}
-              color={color}
-              setFlipped={setFlipped}
-            />
-          </div>
+    <div className={`w-64 h-[400px] flip-card ${isFlipped && "flipped"}`}>
+      <div className="flip-card-inner">
+        <div className="flip-card-front">
+          <FrontFace
+            description={description}
+            color={color}
+            setFlipped={setFlipped}
+          />
+        </div>
+        <div className="flip-card-back">
+          <BackFace
+            backDescription={backDescription}
+            color={color}
+            setFlipped={setFlipped}
+          />
         </div>
       </div>
     </div>
