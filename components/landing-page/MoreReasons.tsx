@@ -121,12 +121,13 @@ export const Card: FC<CardProps> = ({
         perspective: "1000px",
       }}
       className="w-64 h-[400px]"
-      // onMouseEnter={() => setSrc("/sr-heart-white.svg")}
-      // onMouseLeave={() => setSrc("/sr-heart.svg")}
+      onMouseEnter={() => setSrc("/sr-heart-white.svg")}
+      onMouseLeave={() => setSrc("/sr-heart.svg")}
     >
       <div
         style={{
           transformStyle: "preserve-3d",
+          WebkitTransformStyle: "preserve-3d",
           transform: isFlipped ? "rotateY(180deg)" : "none",
         }}
         className={cn(
