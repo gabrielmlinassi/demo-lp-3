@@ -25,20 +25,18 @@ const MoreReasons = () => {
         }
       />
       {isMobile ? (
-        <div className="bg-green-300">
-          <Swiper spaceBetween={-25} slidesPerView={1.25}>
-            {items.map((item, key) => (
-              <SwiperSlide key={key} className="py-8 pl-4">
-                <Card
-                  key={key}
-                  description={item.description}
-                  backDescription={item.backDescription}
-                  color={item.color}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        <Swiper spaceBetween={-25} slidesPerView={1.25}>
+          {items.map((item, key) => (
+            <SwiperSlide key={key} className="py-8 pl-4">
+              <Card
+                key={key}
+                description={item.description}
+                backDescription={item.backDescription}
+                color={item.color}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       ) : (
         <div className="flex items-start justify-center space-x-4 mt-8">
           {items.map((item, key) => (
