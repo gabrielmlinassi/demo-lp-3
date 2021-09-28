@@ -7,7 +7,6 @@ import { useDevices } from "hooks/useDevices";
 
 const MoreReasons = () => {
   const { isMobile } = useDevices();
-  console.log({ isMobile });
 
   return (
     <section className="max-w-screen-xl mx-auto py-20 xl:px-6 2xl:px-0">
@@ -27,12 +26,7 @@ const MoreReasons = () => {
       />
       {isMobile ? (
         <div className="bg-green-300">
-          <Swiper
-            spaceBetween={-25}
-            slidesPerView={1.25}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
-          >
+          <Swiper spaceBetween={-25} slidesPerView={1.25}>
             {items.map((item, key) => (
               <SwiperSlide key={key} className="py-8 pl-4">
                 <Card
