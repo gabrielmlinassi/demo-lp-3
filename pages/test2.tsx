@@ -48,7 +48,7 @@ const FrontFace = ({ description, color, setFlipped }) => {
     <div
       className={cn(
         "w-full h-full border-6 rounded-xl cursor-default px-5 pt-10",
-        "relative group flex flex-col items-center bg-[#F1F2F4]",
+        "group flex flex-col items-center bg-[#F1F2F4]",
         BorderColors[color]
       )}
       // onMouseEnter={() => setSrc("/sr-heart-white.svg")}
@@ -80,7 +80,7 @@ const BackFace = ({ backDescription, color, setFlipped }) => {
   return (
     <div
       className={cn(
-        "relative w-full h-full border-6 rounded-xl cursor-default px-5 pt-10",
+        "w-full h-full border-6 rounded-xl cursor-default px-5 pt-10",
         BorderColors[color],
         BgColors[color]
       )}
