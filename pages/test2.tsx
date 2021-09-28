@@ -1,3 +1,3 @@
-export default function Test2() {
-  return <div>...</div>;
+export default function Example() {
+  return <div></div>;
 }
