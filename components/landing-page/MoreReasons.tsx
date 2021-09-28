@@ -1,13 +1,9 @@
-import Image from "next/image";
-import { FC, useState } from "react";
-import cn from "classnames";
-import { FlipIcon } from "components/icons";
-import CTAButton from "./shared/CTAButton";
-import Heading from "./shared/Heading";
-
-import { useDevices } from "hooks/useDevices";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import CTAButton from "./shared/CTAButton";
+import Heading from "./shared/Heading";
+import Card, { Colors } from "./Card";
+import { useDevices } from "hooks/useDevices";
 
 const MoreReasons = () => {
   const { isMobile } = useDevices();
@@ -66,127 +62,6 @@ const MoreReasons = () => {
         <CTAButton>Find My Perfect Fit Learning Professional</CTAButton>
       </div>
     </section>
-  );
-};
-
-enum Colors {
-  atlantis = "atlantis",
-  oceanGreen = "oceanGreen",
-  puertoRico = "puertoRico",
-  matisse = "matisse",
-  victoria = "victoria",
-}
-
-const BgColors = {
-  atlantis: "bg-[#ABD637]",
-  oceanGreen: "bg-[#3DA06E]",
-  puertoRico: "bg-[#3CBFAE]",
-  matisse: "bg-[#2263A3]",
-  victoria: "bg-[#594697]",
-};
-
-const HoverColors = {
-  atlantis: "group-hover:bg-[#ABD637]",
-  oceanGreen: "group-hover:bg-[#3DA06E]",
-  puertoRico: "group-hover:bg-[#3CBFAE]",
-  matisse: "group-hover:bg-[#2263A3]",
-  victoria: "group-hover:bg-[#594697]",
-};
-
-const BorderColors = {
-  atlantis: "border-[#ABD637]",
-  oceanGreen: "border-[#3DA06E]",
-  puertoRico: "border-[#3CBFAE]",
-  matisse: "border-[#2263A3]",
-  victoria: "border-[#594697]",
-};
-
-type CardProps = {
-  description: React.ReactNode;
-  backDescription: React.ReactNode;
-  color: keyof typeof Colors;
-};
-
-export const Card: FC<CardProps> = ({
-  description,
-  backDescription,
-  color,
-}) => {
-  const [src, setSrc] = useState("/sr-heart.svg");
-  const [isFlipped, setFlipped] = useState(false);
-
-  return (
-    <div
-      style={{
-        perspective: "1000px",
-      }}
-      className="w-64 h-[400px]"
-      onMouseEnter={() => setSrc("/sr-heart-white.svg")}
-      onMouseLeave={() => setSrc("/sr-heart.svg")}
-    >
-      <div
-        style={{
-          transformStyle: "preserve-3d",
-          transform: isFlipped ? "rotateY(180deg)" : "none",
-        }}
-        className={cn(
-          "group w-full h-full transition-transform duration-700",
-          "odd:mt-8 flex flex-col items-center rounded-xl border-6 cursor-default",
-          isFlipped
-            ? `${BgColors[color]} px-4 pt-6`
-            : "bg-[#F1F2F4] px-5 pt-10",
-          BorderColors[color]
-        )}
-      >
-        <div
-          className={cn(
-            !isFlipped ? "inline-flex" : "hidden",
-            "p-4 rounded-full border-4 border-white",
-            HoverColors[color]
-          )}
-        >
-          <Image
-            src={src}
-            alt="sweetrush heart logo"
-            width={60}
-            height={60}
-            objectFit="contain"
-          />
-        </div>
-        <div
-          className={cn(
-            "text-center text-[#5E6284] font-bold",
-            isFlipped ? "mt-0  " : "mt-4"
-          )}
-        >
-          {!isFlipped ? (
-            description
-          ) : (
-            <div
-              style={{
-                transform: "rotateY(180deg)",
-              }}
-              className="text-white font-medium text-sm"
-            >
-              {backDescription}
-            </div>
-          )}
-        </div>
-        <div
-          style={{
-            transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
-          }}
-          className={cn("absolute bottom-6", isFlipped ? "left-4" : "right-4")}
-        >
-          <div
-            onClick={() => setFlipped((prev) => !prev)}
-            className="p-2 rounded-full shadow-xl cursor-pointer bg-white transition-transform duration-300 hover:scale-110"
-          >
-            <FlipIcon />
-          </div>
-        </div>
-      </div>
-    </div>
   );
 };
 
