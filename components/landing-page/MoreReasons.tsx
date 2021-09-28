@@ -127,7 +127,6 @@ export const Card: FC<CardProps> = ({
       <div
         style={{
           transformStyle: "preserve-3d",
-          WebkitTransformStyle: "preserve-3d",
           transform: isFlipped ? "rotateY(180deg)" : "none",
         }}
         className={cn(
