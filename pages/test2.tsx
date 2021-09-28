@@ -118,18 +118,30 @@ export const Card: FC<CardProps> = ({
       <div className={`w-64 h-[400px] flip-card ${isFlipped && "flipped"}`}>
         <div className="flip-card-inner">
           <div className="flip-card-front">
-            <FrontFace
+            <div
+              className="w-full h-full bg-red-500"
+              onClick={() => setFlipped((prev) => !prev)}
+            >
+              front
+            </div>
+            {/* <FrontFace
               description={description}
               color={color}
               setFlipped={setFlipped}
-            />
+            /> */}
           </div>
           <div className="flip-card-back">
-            <BackFace
+            <div
+              className="w-full h-full bg-green-500"
+              onClick={() => setFlipped((prev) => !prev)}
+            >
+              back
+            </div>
+            {/* <BackFace
               backDescription={backDescription}
               color={color}
               setFlipped={setFlipped}
-            />
+            /> */}
           </div>
         </div>
       </div>
