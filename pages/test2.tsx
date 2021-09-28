@@ -45,50 +45,56 @@ const FrontFace = ({ description, color, setFlipped }) => {
   const [src, setSrc] = useState("/sr-heart.svg");
 
   return (
-    <div
-      className={cn(
-        "w-full h-full border-6 rounded-xl cursor-default px-5 pt-10",
-        "group flex flex-col items-center bg-[#F1F2F4]",
-        BorderColors[color]
-      )}
-      // onMouseEnter={() => setSrc("/sr-heart-white.svg")}
-      // onMouseLeave={() => setSrc("/sr-heart.svg")}
-    >
+    <div className="w-full h-full">
       <div
         className={cn(
-          "inline-flex p-4 rounded-full border-4 border-white",
-          HoverColors[color]
+          "relative w-full h-full border-6 rounded-xl cursor-default px-5 pt-10",
+          "group flex flex-col items-center bg-[#F1F2F4]",
+          BorderColors[color]
         )}
+        // onMouseEnter={() => setSrc("/sr-heart-white.svg")}
+        // onMouseLeave={() => setSrc("/sr-heart.svg")}
       >
-        <Image
-          src={src}
-          alt="sweetrush heart logo"
-          width={60}
-          height={60}
-          objectFit="contain"
-        />
+        <div
+          className={cn(
+            "inline-flex p-4 rounded-full border-4 border-white",
+            HoverColors[color]
+          )}
+        >
+          <Image
+            src={src}
+            alt="sweetrush heart logo"
+            width={60}
+            height={60}
+            objectFit="contain"
+          />
+        </div>
+        <div className={cn("text-center text-[#5E6284] font-bold mt-4")}>
+          {description}
+        </div>
+        <FlipButton setFlipped={setFlipped} />
       </div>
-      <div className={cn("text-center text-[#5E6284] font-bold mt-4")}>
-        {description}
-      </div>
-      <FlipButton setFlipped={setFlipped} />
     </div>
   );
 };
 
 const BackFace = ({ backDescription, color, setFlipped }) => {
   return (
-    <div
-      className={cn(
-        "w-full h-full border-6 rounded-xl cursor-default px-5 pt-10",
-        BorderColors[color],
-        BgColors[color]
-      )}
-    >
-      <div className={cn("text-center text-[#5E6284] font-bold mt-0")}>
-        <div className="text-white font-medium text-sm">{backDescription}</div>
+    <div className="w-full h-full">
+      <div
+        className={cn(
+          "relative w-full h-full border-6 rounded-xl cursor-default px-5 pt-10",
+          BorderColors[color],
+          BgColors[color]
+        )}
+      >
+        <div className={cn("text-center text-[#5E6284] font-bold mt-0")}>
+          <div className="text-white font-medium text-sm">
+            {backDescription}
+          </div>
+        </div>
+        <FlipButton setFlipped={setFlipped} />
       </div>
-      <FlipButton setFlipped={setFlipped} />
     </div>
   );
 };
