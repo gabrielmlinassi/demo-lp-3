@@ -47,7 +47,7 @@ const FrontFace = ({ description, color, setFlipped }) => {
   return (
     <div
       className={cn(
-        "relative w-full h-full transition-transform duration-700 border-6 rounded-xl cursor-default px-5 pt-10",
+        "w-full h-full border-6 rounded-xl cursor-default px-5 pt-10",
         "group flex flex-col items-center bg-[#F1F2F4]",
         BorderColors[color]
       )}
@@ -80,7 +80,7 @@ const BackFace = ({ backDescription, color, setFlipped }) => {
   return (
     <div
       className={cn(
-        "relative w-full h-full transition-transform duration-700 border-6 rounded-xl cursor-default px-5 pt-10",
+        "w-full h-full border-6 rounded-xl cursor-default px-5 pt-10",
         BorderColors[color],
         BgColors[color]
       )}
