@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { useForm, Controller } from "react-hook-form";
 import cn from "classnames";
@@ -32,9 +32,9 @@ const Question: FC<QuestionProps> = ({ question, options, onSubmit, name }) => {
         <Controller
           control={control}
           name={name}
-          render={({ field: { onChange } }) => (
-            <Options options={options} onChange={onChange} />
-          )}
+          render={({ field: { onChange } }) => {
+            return <Options options={options} onChange={onChange} />;
+          }}
         />
       </div>
       <div className="flex justify-between items-end w-full pt-6">
@@ -51,7 +51,11 @@ type OptionsProps = {
 };
 
 const Options: FC<OptionsProps> = ({ options, onChange }) => {
-  const [selected, setSelected] = useState();
+  const [selected, setSelected] = useState<string>();
+
+  useEffect(() => {
+    setSelected("");
+  }, [options]);
 
   return (
     <RadioGroup
