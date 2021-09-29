@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       boxShadow: {
         test: "0px 5px 6px 0px rgba(0,0,0,0.2)",
+        fly: "0 10px 20px -8px rgba(0, 0, 0,.7)",
       },
       borderWidth: {
         6: "6px",
