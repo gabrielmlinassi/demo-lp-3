@@ -1,10 +1,13 @@
-import { IFormValues } from "pages/form";
-import { FC } from "react";
 import MyImage from "@/shared/MyImage";
 
-const Result: FC<{ data: IFormValues }> = ({ data }) => {
+const Result = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 py-12">
+      <div className="w-3/4 mx-auto pb-8">
+        <div className="text-4xl font-medium text-left text-[#2263A3]">
+          Thank You!
+        </div>
+      </div>
       <MyImage
         className="w-3/4 mx-auto"
         src="/assets/finished-1.svg"

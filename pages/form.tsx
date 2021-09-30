@@ -56,8 +56,9 @@ const Form = () => {
     "7": <ContactForm register={register} errors={formState.errors} />,
   };
 
+  const totalSteps = Object.keys(Steps).length + 1;
   const started = step > 0;
-  const finished = step === Object.keys(Steps).length + 1;
+  const finished = step === totalSteps;
 
   useEffect(() => {
     if (finished) {
@@ -88,13 +89,16 @@ const Form = () => {
 
   return (
     <Container>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col justify-between h-full"
+      >
         {Steps[step]}
-        {!isEmpty(formState.errors) && (
-          <Error>{getErrorMessage(formState.errors)}</Error>
-        )}
+        <Error show={!isEmpty(formState.errors)}>
+          {getErrorMessage(formState.errors)}
+        </Error>
         <div className="flex justify-between items-end w-full pt-6">
-          <Progressbar />
+          <Progressbar step={step} totalSteps={totalSteps} />
           <FormButton type="submit" size="large">
             Next
           </FormButton>
