@@ -1,7 +1,7 @@
 import Image from "next/image";
 import cn from "classnames";
 
-import Heading from "@/shared/Heading";
+import Heading from "@/landing-page/shared/Heading";
 import CTAButton from "./shared/CTAButton";
 import Badge from "./shared/Badge";
 

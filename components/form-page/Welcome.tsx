@@ -1,16 +1,9 @@
 import Image from "next/image";
 import FormButton from "@/form/FormButton";
-import { IFormValues } from "pages/form";
-import { FC } from "react";
-import { useForm } from "react-hook-form";
 
-type WelcomeProps = { onSubmit: (data: IFormValues) => void };
-
-const Welcome: FC<WelcomeProps> = ({ onSubmit }) => {
-  const { handleSubmit } = useForm<IFormValues>();
-
+const Welcome = ({ onStarted }) => {
   return (
-    <form className="space-y-8 text-center" onSubmit={handleSubmit(onSubmit)}>
+    <div className="space-y-8 text-center">
       <div>
         <Image
           src="/form/welcome.png"
@@ -36,9 +29,11 @@ const Welcome: FC<WelcomeProps> = ({ onSubmit }) => {
         <span className="font-semibold">rodrigo@sweetrush.com</span> anytime.
       </div>
       <div className="inline-block pt-4">
-        <FormButton>Get Started</FormButton>
+        <FormButton type="button" onClick={onStarted}>
+          Get Started
+        </FormButton>
       </div>
-    </form>
+    </div>
   );
 };
 

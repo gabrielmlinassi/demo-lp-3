@@ -9,6 +9,8 @@ enum Sizes {
 
 type ButtonProps = {
   size?: keyof typeof Sizes;
+  type: "button" | "submit";
+  onClick?: () => void;
 };
 
 const ChevronPosition = {
@@ -16,10 +18,16 @@ const ChevronPosition = {
   [Sizes.large]: "right-8 group-hover:right-10",
 };
 
-const FormButton: FC<ButtonProps> = ({ children, size = "base" }) => {
+const FormButton: FC<ButtonProps> = ({
+  children,
+  onClick,
+  size = "base",
+  type,
+}) => {
   return (
     <button
-      type="submit"
+      type={type}
+      onClick={onClick}
       className={cn(
         "group relative flex items-center justify-center space-x-2",
         size === Sizes.large ? "px-16 py-3" : "px-8 py-3",

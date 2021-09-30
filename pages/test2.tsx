@@ -1,114 +1,144 @@
-import Question from "@/form/Question";
+import { isEmpty } from "helpers";
 import { useState } from "react";
-import { SubmitHandler } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 
-export interface IFormValues {
-  q0: string;
-  q1: string;
-  q2: string;
-  q3: string;
-  q4: string;
-  q5: string;
-  name: string;
-  email: string;
-  companyName: string;
-  message: string;
-}
-
-const defaults: IFormValues = {
-  q0: "",
+const defaultValues = {
   q1: "",
   q2: "",
-  q3: "",
-  q4: "",
-  q5: "",
-  name: "",
-  email: "",
-  companyName: "",
-  message: "",
 };
 
 export default function Example() {
-  const [step, setStep] = useState(0);
-  const [result, setResult] = useState<IFormValues>(defaults);
+  const [step, setStep] = useState(1);
+  const [result, setResult] = useState(defaultValues);
+  const { handleSubmit, control, formState } = useForm();
 
-  const onSubmit: SubmitHandler<IFormValues> = (data) => {
+  const Steps = {
+    "1": <Q1 control={control} />,
+    "2": <Q2 control={control} />,
+    "3": <Result data={result} />,
+  };
+
+  const onSubmit = (data) => {
     setResult((prev) => ({ ...prev, ...data }));
     setStep((prev) => ++prev);
   };
 
-  // const Steps = {
-  //   "0": <Welcome onSubmit={onSubmit} />,
-  //   "1": <ContactForm onSubmit={onSubmit} />,
-  //   "2": <Step1 onSubmit={onSubmit} />,
-  //   "3": <Step2 onSubmit={onSubmit} />,
-  //   "4": <Result data={result} />,
-  // };
-
   return (
-    <div className="max-w-screen-xl flex flex-col p-4 bg-red-200">
-      <Question
-        question={options[0].question}
-        options={options[0].options}
-        onSubmit={onSubmit}
-      />
+    <div className="w-screen h-screen flex items-center justify-center">
+      <div className="max-w-screen-sm mx-auto w-full">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="p-8 rounded-md bg-yellow-300">{Steps[step]}</div>
+          <div className="flex items-center mt-4">
+            {!isEmpty(formState.errors) && (
+              <div className="text-red-400">Please, select an option</div>
+            )}
+            <input
+              type="submit"
+              value="Next"
+              className="ml-auto px-4 py-2 rounded-md"
+            />
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
 
-const options = [
-  {
-    question: "/form/q1.png",
-    options: [
-      "I need an extra pair of hands to complete a project.",
-      "I need a specialized skill that I haven’t been able to find.",
-      "I need someone to fill in for a teammate on leave.",
-      "I’m looking for someone who could potentially become a FT employee (contract to hire).",
-      "I have a different need that I can share with you.",
-    ],
-  },
-  {
-    question: "/form/q2.png",
-    options: [
-      "Less than a month",
-      "1–3 months",
-      "3–6 months",
-      "More than 6 months",
-      "I’m not sure yet.",
-    ],
-  },
-  {
-    question: "/form/q3.png",
-    options: [
-      "30 hours per week or more",
-      "20–30 hours per week",
-      "Less than 20 hours per week",
-      "I’m not sure yet; let’s talk!",
-    ],
-  },
-  {
-    question: "/form/q4.png",
-    options: [
-      "Yes, I have a written job description.",
-      "I’ve got a specific list of tasks on paper.",
-      "I have an idea of what I need and can share when we talk.",
-    ],
-  },
-  {
-    question: "/form/q5.png",
-    options: [
-      "One will be fine.",
-      "More than one is needed. ",
-      "I need a team with varied skill sets (instructional designer, project manager, graphic designer, etc.).",
-      "I’m not sure yet; let’s talk!",
-    ],
-  },
-  {
-    question: "/form/q6.png",
-    options: [
-      "Right away—I am ready and eager to engage the right talent!",
-      "In a few weeks",
-      "I’m not sure yet; let’s talk!",
-    ],
-  },
-];
+const Q1 = ({ control }) => {
+  return (
+    <div className="flex flex-col space-y-4">
+      <div>What is your gender?</div>
+      <Controller
+        render={({ field: { onChange, name } }) => (
+          <>
+            <RadioButton
+              onChange={onChange}
+              value="male"
+              label="male"
+              name={name}
+            />
+            <RadioButton
+              onChange={onChange}
+              value="female"
+              label="female"
+              name={name}
+            />
+            <RadioButton
+              onChange={onChange}
+              value="gay"
+              label="gay"
+              name={name}
+            />
+            <RadioButton
+              onChange={onChange}
+              value="other"
+              label="other"
+              name={name}
+            />
+          </>
+        )}
+        name="q1"
+        control={control}
+        rules={{
+          required: true,
+        }}
+      />
+    </div>
+  );
+};
+
+const Q2 = ({ control }) => {
+  return (
+    <div className="flex flex-col space-y-4">
+      <div>What is your age?</div>
+      <Controller
+        render={({ field: { onChange, name } }) => (
+          <>
+            <RadioButton
+              onChange={onChange}
+              value="24"
+              label="24"
+              name={name}
+            />
+            <RadioButton
+              onChange={onChange}
+              value="25"
+              label="25"
+              name={name}
+            />
+            <RadioButton
+              onChange={onChange}
+              value="26"
+              label="26"
+              name={name}
+            />
+          </>
+        )}
+        name="q2"
+        control={control}
+        rules={{
+          required: true,
+        }}
+      />
+    </div>
+  );
+};
+
+const RadioButton = ({ label, onChange, value, name }) => {
+  return (
+    <div className="flex items-center space-x-2">
+      <input
+        type="radio"
+        value={value}
+        onChange={onChange}
+        id={label}
+        name={name}
+      />
+      <label htmlFor={label}>{label}</label>
+    </div>
+  );
+};
+
+const Result = ({ data }) => {
+  return <div>{JSON.stringify(data, null, 2)}</div>;
+};

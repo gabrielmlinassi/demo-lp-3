@@ -1,6 +1,6 @@
 import { FC } from "react";
 import cn from "classnames";
-import Logo from "@/shared/Logo";
+import Logo from "@/landing-page/shared/Logo";
 
 const Container: FC = ({ children }) => {
   return (

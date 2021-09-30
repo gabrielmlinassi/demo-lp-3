@@ -1,24 +1,9 @@
-import { FC } from "react";
 import Image from "next/image";
-import cn from "classnames";
-import { ExclamationCircleIcon } from "@heroicons/react/solid";
 import TextField from "@/form/TextField";
-import { useForm } from "react-hook-form";
-import FormButton from "./FormButton";
-import Progressbar from "./Progressbar";
-import { IFormValues } from "pages/form";
 
-type ContactFormProps = { onSubmit: (data: IFormValues) => void };
-
-const ContactForm: FC<ContactFormProps> = ({ onSubmit }) => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<IFormValues>();
-
+const ContactForm = ({ register, errors }) => {
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <>
       <Image
         src={"/form/q6.png"}
         width={550}
@@ -64,28 +49,9 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit }) => {
             We will keep your data safe and private; you won&apos;t get any spam
             from us—we promise.
           </div>
-          <ErrorMessage />
         </div>
       </div>
-      <div className="flex justify-between items-end w-full pt-6">
-        <Progressbar />
-        <FormButton size="large">Next</FormButton>
-      </div>
-    </form>
-  );
-};
-
-const ErrorMessage = () => {
-  return (
-    <div
-      className={cn(
-        "col-span-full flex items-center justify-center space-x-4",
-        "bg-red-300 px-4 py-2 rounded-md text-sm text-black text-opacity-60"
-      )}
-    >
-      <ExclamationCircleIcon className="w-5 h-5 text-red-500 bg-white rounded-full" />
-      <span>Please, fix the errors before contiuing.</span>
-    </div>
+    </>
   );
 };
 
