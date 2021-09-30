@@ -15,8 +15,9 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/shared/*": ["components/landing-page/shared/*"],
-      "@/landing-page/*": ["components/landing-page/*"]
+      "@/shared/*": ["components/shared/*"],
+      "@/landing-page/*": ["components/landing-page/*"],
+      "@/form/*": ["components/form-page/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

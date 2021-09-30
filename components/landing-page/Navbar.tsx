@@ -2,6 +2,7 @@ import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import cn from "classnames";
+import Logo from "@/landing-page/shared/Logo";
 
 export const Navbar = () => {
   return (
@@ -28,29 +29,7 @@ export const Navbar = () => {
                 </Disclosure.Button>
               </div>
               <div className="flex-1 flex items-center justify-start sm:items-stretch sm:justify-between">
-                <div className="flex-shrink-0 flex items-center space-x-3 divide-x-2 divide-[#768390]">
-                  <a
-                    href="https://www.sweetrush.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <div className="relative h-10 w-36">
-                      <Image
-                        className="block"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="left"
-                        src="/logo.png"
-                        alt="SweetRush"
-                      />
-                    </div>
-                  </a>
-                  <div className="hidden xl:block pl-3 mt-1">
-                    <span className="text-[#009BDE] text-sm font-medium">
-                      TALENT SOLUTIONS
-                    </span>
-                  </div>
-                </div>
+                <Logo className="flex-shrink-0" />
                 <div className="hidden lg:block mt-1">
                   <div className="flex 2xl:space-x-4">
                     {navigation.map((item) => (

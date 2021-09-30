@@ -1,10 +1,12 @@
 import cn from "classnames";
 import Image from "next/image";
-import Badge from "@/shared/Badge";
-import CTAButton from "@/shared/CTAButton";
-import { isMobile } from "react-device-detect";
+import Badge from "@/landing-page/shared/Badge";
+import CTAButton from "@/landing-page/shared/CTAButton";
+import { useDevices } from "hooks/useDevices";
 
 const MeetRodrigo = () => {
+  const { isMobile } = useDevices();
+
   return (
     <section
       id="meet-rodrigo"

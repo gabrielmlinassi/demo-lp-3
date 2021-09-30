@@ -19,6 +19,15 @@ html {
   }
 }
 
+.responsive-img-wrap > div,
+.responsive-img-wrap img {
+  position: relative !important;
+}
+
+.responsive-img-wrap img {
+  height: auto !important;
+}
+
 .flip-card {
   perspective: 1000px;
 }
