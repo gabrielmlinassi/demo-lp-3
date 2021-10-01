@@ -1,15 +1,15 @@
 import Image from "next/image";
 import { Controller } from "react-hook-form";
-import { IFormValues } from "pages/form";
-import { RadioGroup } from "./RadioGroup";
 import { Radio } from "./Radio";
+import { RadioGroup } from "./RadioGroup";
+import src from "@/form-assets/q5.png";
 
 const Q5 = ({ control }) => {
   return (
     <>
       <div>
         <Image
-          src={"/form/q5.png"}
+          src={src}
           width={550}
           height={150}
           objectFit="contain"
@@ -21,27 +21,25 @@ const Q5 = ({ control }) => {
           render={({ field: { onChange, value } }) => {
             return (
               <RadioGroup value={value} onChange={onChange}>
-                <Radio value="One will be fine." label="One will be fine." />
+                <Radio label="One will be fine." value="One will be fine." />
                 <Radio
-                  value="More than one is needed."
                   label="More than one is needed."
+                  value="More than one is needed."
                 />
                 <Radio
-                  value="I need a team with varied skill sets (instructional designer, project manager, graphic designer, etc.)."
                   label="I need a team with varied skill sets (instructional designer, project manager, graphic designer, etc.)."
+                  value="I need a team with varied skill set."
                 />
                 <Radio
-                  value="I’m not sure yet; let’s talk!"
                   label="I’m not sure yet; let’s talk!"
+                  value="I’m not sure yet let’s talk"
                 />
               </RadioGroup>
             );
           }}
           control={control}
           name={"q5"}
-          rules={{
-            required: true,
-          }}
+          defaultValue=""
         />
       </div>
     </>

@@ -9,7 +9,8 @@ const Container: FC = ({ children }) => {
       <div className="flex-1 flex flex-col items-center justify-center max-w-screen-md w-full mx-auto text-center">
         <div
           className={cn(
-            "px-6 pt-6 pb-8 rounded-lg bg-gray-50 w-full",
+            "w-full min-h-[70%]",
+            "px-6 pt-6 pb-8 rounded-lg bg-gray-50",
             "bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 shadow-md"
           )}
         >

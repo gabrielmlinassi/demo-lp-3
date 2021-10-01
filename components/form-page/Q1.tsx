@@ -1,55 +1,47 @@
+import { FC } from "react";
 import Image from "next/image";
-import { Controller } from "react-hook-form";
-import { RadioGroup } from "./RadioGroup";
-import { Radio } from "./Radio";
+import { UseFormRegister } from "react-hook-form";
+import { IFormValues } from "pages/form";
+import { Checkbox } from "./Checkbox";
+import src from "@/form-assets/q1.png";
 
-const Q1 = ({ control }) => {
+const Q1: FC<{ register: UseFormRegister<IFormValues> }> = ({ register }) => {
   return (
     <>
-      <div>
+      <div className="animate-slide">
         <Image
-          src={"/form/q1.png"}
+          src={src}
           width={550}
           height={150}
           objectFit="contain"
           alt="welcome message"
         />
       </div>
-      <div>
-        <Controller
-          render={({ field: { onChange, value } }) => {
-            return (
-              <div className="space-y-8">
-                <RadioGroup value={value} onChange={onChange}>
-                  <Radio
-                    value="I need an extra pair of hands to complete a project."
-                    label="I need an extra pair of hands to complete a project."
-                  />
-                  <Radio
-                    value="I need a specialized skill that I haven’t been able to find."
-                    label="I need a specialized skill that I haven’t been able to find."
-                  />
-                  <Radio
-                    value="I need someone to fill in for a teammate on leave."
-                    label="I need someone to fill in for a teammate on leave."
-                  />
-                  <Radio
-                    value="I’m looking for someone who could potentially become a FT employee (contract to hire)."
-                    label="I’m looking for someone who could potentially become a FT employee (contract to hire)."
-                  />
-                  <Radio
-                    value="I have a different need that I can share with you."
-                    label="I have a different need that I can share with you."
-                  />
-                </RadioGroup>
-              </div>
-            );
-          }}
-          control={control}
-          name={"q1"}
-          rules={{
-            required: true,
-          }}
+      <div className="space-y-8">
+        <Checkbox
+          label="I need an extra pair of hands to complete a project."
+          value="Need an extra pair of hands to complete a project."
+          register={register("q1", { required: true })}
+        />
+        <Checkbox
+          label="I need a specialized skill that I haven’t been able to find."
+          value="Need a specialized skill that haven’t been able to find."
+          register={register("q1", { required: true })}
+        />
+        <Checkbox
+          label="I need someone to fill in for a teammate on leave."
+          value="Need someone to fill in for a teammate on leave."
+          register={register("q1", { required: true })}
+        />
+        <Checkbox
+          label="I’m looking for someone who could potentially become a FT employee (contract to hire)."
+          value="Looking for someone who could potentially become a FT employee (contract to hire)."
+          register={register("q1", { required: true })}
+        />
+        <Checkbox
+          label="I have a different need that I can share with you."
+          value="I have a different need that I can share with you."
+          register={register("q1", { required: true })}
         />
       </div>
     </>

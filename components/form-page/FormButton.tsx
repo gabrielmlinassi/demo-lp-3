@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, MouseEvent } from "react";
 import cn from "classnames";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 
@@ -10,7 +10,7 @@ enum Sizes {
 type ButtonProps = {
   size?: keyof typeof Sizes;
   type: "button" | "submit";
-  onClick?: () => void;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 };
 
 const ChevronPosition = {

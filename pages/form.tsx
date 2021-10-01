@@ -13,10 +13,11 @@ import Q3 from "@/form/Q3";
 import Q4 from "@/form/Q4";
 import Q5 from "@/form/Q5";
 import Q6 from "@/form/Q6";
-import { isEmpty } from "helpers";
+import { getFieldValues, isEmpty } from "helpers";
+import { LoadingIcon } from "components/icons";
 
 export interface IFormValues {
-  q1: string;
+  q1: string[];
   q2: string;
   q3: string;
   q4: string;
@@ -24,12 +25,12 @@ export interface IFormValues {
   q6: string;
   name: string;
   email: string;
-  companyName: string;
+  company: string;
   message: string;
 }
 
 const defaultValues: IFormValues = {
-  q1: "",
+  q1: [],
   q2: "",
   q3: "",
   q4: "",
@@ -37,7 +38,7 @@ const defaultValues: IFormValues = {
   q6: "",
   name: "",
   email: "",
-  companyName: "",
+  company: "",
   message: "",
 };
 
@@ -47,7 +48,7 @@ const Form = () => {
   const { handleSubmit, register, control, formState } = useForm<IFormValues>();
 
   const Steps = {
-    "1": <Q1 control={control} />,
+    "1": <Q1 register={register} />,
     "2": <Q2 control={control} />,
     "3": <Q3 control={control} />,
     "4": <Q4 control={control} />,
@@ -56,12 +57,23 @@ const Form = () => {
     "7": <ContactForm register={register} errors={formState.errors} />,
   };
 
+  const totalSteps = Object.keys(Steps).length + 1;
   const started = step > 0;
-  const finished = step === Object.keys(Steps).length + 1;
+  const finished = step === totalSteps;
+  const isLastStep = step === totalSteps - 1;
 
   useEffect(() => {
     if (finished) {
-      console.log({ result });
+      const data = getFieldValues(result);
+      console.log({ data });
+
+      fetch("/api/submit-form", {
+        method: "POST",
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log({ data }))
+        .catch((err) => console.log({ err }));
     }
   }, [finished, result]);
 
@@ -81,22 +93,25 @@ const Form = () => {
   if (finished) {
     return (
       <Container>
-        <Result data={result} />
+        <Result />
       </Container>
     );
   }
 
   return (
     <Container>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col justify-between h-full"
+      >
         {Steps[step]}
-        {!isEmpty(formState.errors) && (
-          <Error>{getErrorMessage(formState.errors)}</Error>
-        )}
+        <Error show={!isEmpty(formState.errors)}>
+          {getErrorMessage(formState.errors)}
+        </Error>
         <div className="flex justify-between items-end w-full pt-6">
-          <Progressbar />
+          <Progressbar step={step} totalSteps={totalSteps} />
           <FormButton type="submit" size="large">
-            Next
+            {isLastStep ? "Submit" : "Next"}
           </FormButton>
         </div>
       </form>
@@ -104,14 +119,20 @@ const Form = () => {
   );
 };
 
+{
+  /* <div className="flex space-x-4">
+  <span>Sending</span> <LoadingIcon />
+</div> */
+}
+
 const getErrorMessage = (errors: FieldErrors<IFormValues>) => {
-  const { q1, q2, q3, q4, q5, q6, name, email, companyName } = errors;
+  const { q1, q2, q3, q4, q5, q6, name, email, company } = errors;
 
   if (q1 || q2 || q3 || q4 || q5 || q6) {
     return "Please, choose an option";
   }
 
-  if (name || email || companyName) {
+  if (name || email || company) {
     return "Please, fill out the required fields";
   }
 

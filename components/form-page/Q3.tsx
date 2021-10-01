@@ -1,14 +1,15 @@
 import Image from "next/image";
 import { Controller } from "react-hook-form";
-import { RadioGroup } from "./RadioGroup";
 import { Radio } from "./Radio";
+import { RadioGroup } from "./RadioGroup";
+import src from "@/form-assets/q3.png";
 
 const Q3 = ({ control }) => {
   return (
     <>
       <div>
         <Image
-          src={"/form/q3.png"}
+          src={src}
           width={550}
           height={150}
           objectFit="contain"
@@ -21,20 +22,20 @@ const Q3 = ({ control }) => {
             return (
               <RadioGroup value={value} onChange={onChange}>
                 <Radio
-                  value="30 hours per week or more"
                   label="30 hours per week or more"
+                  value="30 hours per week or more"
                 />
                 <Radio
-                  value="20–30 hours per week"
                   label="20–30 hours per week"
+                  value="20-30-hours-per-week"
                 />
                 <Radio
-                  value="Less than 20 hours per week"
                   label="Less than 20 hours per week"
+                  value="Less than 20 hours per week"
                 />
                 <Radio
-                  value="I’m not sure yet; let’s talk!"
                   label="I’m not sure yet; let’s talk!"
+                  value="I'm not sure yet let's talk"
                 />
               </RadioGroup>
             );
