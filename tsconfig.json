@@ -17,7 +17,9 @@
     "paths": {
       "@/shared/*": ["components/shared/*"],
       "@/landing-page/*": ["components/landing-page/*"],
-      "@/form/*": ["components/form-page/*"]
+      "@/form/*": ["components/form-page/*"],
+      "@/form-assets/*": ["/public/assets/form/*"],
+      "@/lp-assets/*": ["/public/assets/landing-page/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

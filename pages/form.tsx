@@ -13,7 +13,8 @@ import Q3 from "@/form/Q3";
 import Q4 from "@/form/Q4";
 import Q5 from "@/form/Q5";
 import Q6 from "@/form/Q6";
-import { isEmpty } from "helpers";
+import { getFieldValues, isEmpty } from "helpers";
+import { LoadingIcon } from "components/icons";
 
 export interface IFormValues {
   q1: string;
@@ -24,7 +25,7 @@ export interface IFormValues {
   q6: string;
   name: string;
   email: string;
-  companyName: string;
+  company: string;
   message: string;
 }
 
@@ -37,7 +38,7 @@ const defaultValues: IFormValues = {
   q6: "",
   name: "",
   email: "",
-  companyName: "",
+  company: "",
   message: "",
 };
 
@@ -59,10 +60,19 @@ const Form = () => {
   const totalSteps = Object.keys(Steps).length + 1;
   const started = step > 0;
   const finished = step === totalSteps;
+  const isLastStep = step === totalSteps - 1;
 
   useEffect(() => {
     if (finished) {
-      console.log({ result });
+      const data = getFieldValues(result);
+
+      fetch("/api/submit-form", {
+        method: "POST",
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log({ data }))
+        .catch((err) => console.log({ err }));
     }
   }, [finished, result]);
 
@@ -82,7 +92,7 @@ const Form = () => {
   if (finished) {
     return (
       <Container>
-        <Result data={result} />
+        <Result />
       </Container>
     );
   }
@@ -100,7 +110,7 @@ const Form = () => {
         <div className="flex justify-between items-end w-full pt-6">
           <Progressbar step={step} totalSteps={totalSteps} />
           <FormButton type="submit" size="large">
-            Next
+            {isLastStep ? "Submit" : "Next"}
           </FormButton>
         </div>
       </form>
@@ -108,14 +118,20 @@ const Form = () => {
   );
 };
 
+{
+  /* <div className="flex space-x-4">
+  <span>Sending</span> <LoadingIcon />
+</div> */
+}
+
 const getErrorMessage = (errors: FieldErrors<IFormValues>) => {
-  const { q1, q2, q3, q4, q5, q6, name, email, companyName } = errors;
+  const { q1, q2, q3, q4, q5, q6, name, email, company } = errors;
 
   if (q1 || q2 || q3 || q4 || q5 || q6) {
     return "Please, choose an option";
   }
 
-  if (name || email || companyName) {
+  if (name || email || company) {
     return "Please, fill out the required fields";
   }
 

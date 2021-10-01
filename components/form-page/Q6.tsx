@@ -1,14 +1,15 @@
 import Image from "next/image";
 import { Controller } from "react-hook-form";
-import { RadioGroup } from "./RadioGroup";
 import { Radio } from "./Radio";
+import { RadioGroup } from "./RadioGroup";
+import src from "@/form-assets/q6.png";
 
 const Q6 = ({ control }) => {
   return (
     <>
       <div>
         <Image
-          src={"/form/q6.png"}
+          src={src}
           width={550}
           height={150}
           objectFit="contain"
@@ -21,13 +22,13 @@ const Q6 = ({ control }) => {
             return (
               <RadioGroup value={value} onChange={onChange}>
                 <Radio
-                  value="Right away—I am ready and eager to engage the right talent!"
                   label="Right away—I am ready and eager to engage the right talent!"
+                  value="Right away—I am ready and eager to engage the right talent!"
                 />
-                <Radio value="In a few weeks" label="In a few weeks" />
+                <Radio label="In a few weeks" value="In a few weeks" />
                 <Radio
-                  value="I’m not sure yet; let’s talk!"
                   label="I’m not sure yet; let’s talk!"
+                  value="I'm not sure yet let's talk"
                 />
               </RadioGroup>
             );

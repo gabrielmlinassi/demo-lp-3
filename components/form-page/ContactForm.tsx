@@ -1,11 +1,20 @@
 import Image from "next/image";
 import TextField from "@/form/TextField";
+import src from "@/form-assets/q7.png";
+import { FC } from "react";
+import { FieldErrors, UseFormRegister } from "react-hook-form";
+import { IFormValues } from "pages/form";
 
-const ContactForm = ({ register, errors }) => {
+type ContactFormProps = {
+  register: UseFormRegister<IFormValues>;
+  errors: FieldErrors<IFormValues>;
+};
+
+const ContactForm: FC<ContactFormProps> = ({ register, errors }) => {
   return (
     <>
       <Image
-        src={"/form/q6.png"}
+        src={src}
         width={550}
         height={150}
         objectFit="contain"
@@ -20,7 +29,7 @@ const ContactForm = ({ register, errors }) => {
             label="Name"
             placeholder="type your name here"
             required
-            register={register("name", { required: true })}
+            register={register("name")}
             error={errors.name}
           />
           <TextField
@@ -35,8 +44,8 @@ const ContactForm = ({ register, errors }) => {
             label="Company Name"
             placeholder="type your company's name here"
             required
-            register={register("companyName", { required: true })}
-            error={errors.companyName}
+            register={register("company")}
+            error={errors.company}
           />
           <TextField
             multiline

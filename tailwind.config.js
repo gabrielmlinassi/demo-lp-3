@@ -17,7 +17,7 @@ module.exports = {
         "bubble-texture": 'url("/texture.svg")',
         "subfooter-line": 'url("/subfooter-arrow.svg")',
         "subfooter-line-mobile": 'url("/subfooter-arrow-mobile.svg")',
-        form: 'url("/form/bg.svg")',
+        form: 'url("/assets/form/bg.svg")',
         "why-work-with-us-pattern":
           "url('/why-work-with-us-texture.png'), linear-gradient(90deg, #42BEAD 0.01%, #3195AC 43.79%, #2364A4 100.04%)",
         "line-1": 'url("/assets/line1.svg")',
@@ -41,6 +41,15 @@ module.exports = {
       },
       objectPosition: {
         my: "-200% 0%",
+      },
+      keyframes: {
+        slide: {
+          "0%": { transform: "translateX(-5%)", opacity: "0" },
+          "100%": { transform: "translateX(0%)", opacity: "100" },
+        },
+      },
+      animation: {
+        slide: "slide .5s ease-in-out",
       },
     },
   },

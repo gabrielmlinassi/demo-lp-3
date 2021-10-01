@@ -1,4 +1,6 @@
 import MyImage from "@/shared/MyImage";
+import src1 from "@/form-assets/finished-1.svg";
+import src2 from "@/form-assets/finished-2.svg";
 
 const Result = () => {
   return (
@@ -8,16 +10,8 @@ const Result = () => {
           Thank You!
         </div>
       </div>
-      <MyImage
-        className="w-3/4 mx-auto"
-        src="/assets/finished-1.svg"
-        alt="welcome message"
-      />
-      <MyImage
-        className="w-3/4 mx-auto"
-        src="/assets/finished-2.svg"
-        alt="welcome message"
-      />
+      <MyImage className="w-3/4 mx-auto" src={src1} alt="welcome message" />
+      <MyImage className="w-3/4 mx-auto" src={src2} alt="welcome message" />
     </div>
   );
 };

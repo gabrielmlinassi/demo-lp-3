@@ -1,12 +1,13 @@
 import Image from "next/image";
 import FormButton from "@/form/FormButton";
+import src from "@/form-assets/welcome.png";
 
 const Welcome = ({ onStarted }) => {
   return (
     <div className="space-y-8 text-center">
       <div>
         <Image
-          src="/form/welcome.png"
+          src={src}
           width={300}
           height={300}
           objectFit="contain"
