@@ -27,7 +27,7 @@ const Q4 = ({ control }) => {
                 />
                 <Radio
                   label="I’ve got a specific list of tasks on paper."
-                  value="I’ve got a specific list of tasks on paper."
+                  value="I've got a specific list of task on paper."
                 />
                 <Radio
                   label="I have an idea of what I need and can share when we talk."

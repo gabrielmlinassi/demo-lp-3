@@ -5,7 +5,7 @@ export const Radio = ({ value, label }) => {
   return (
     <$RadioGroup.Option value={value} className="focus:outline-none">
       {({ checked }) => (
-        <div className="group flex items-center space-x-4 animate-slide">
+        <div className="group flex items-center space-x-4">
           <div className="bg-gradient-to-r from-[#2075C6] to-[#51A1FF] p-[2px] rounded-full flex focus-within:ring">
             <div className="bg-white p-[2px] rounded-full flex">
               <div

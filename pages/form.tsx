@@ -17,7 +17,7 @@ import { getFieldValues, isEmpty } from "helpers";
 import { LoadingIcon } from "components/icons";
 
 export interface IFormValues {
-  q1: string;
+  q1: string[];
   q2: string;
   q3: string;
   q4: string;
@@ -30,7 +30,7 @@ export interface IFormValues {
 }
 
 const defaultValues: IFormValues = {
-  q1: "",
+  q1: [],
   q2: "",
   q3: "",
   q4: "",
@@ -48,7 +48,7 @@ const Form = () => {
   const { handleSubmit, register, control, formState } = useForm<IFormValues>();
 
   const Steps = {
-    "1": <Q1 control={control} />,
+    "1": <Q1 register={register} />,
     "2": <Q2 control={control} />,
     "3": <Q3 control={control} />,
     "4": <Q4 control={control} />,
@@ -65,6 +65,7 @@ const Form = () => {
   useEffect(() => {
     if (finished) {
       const data = getFieldValues(result);
+      console.log({ data });
 
       fetch("/api/submit-form", {
         method: "POST",

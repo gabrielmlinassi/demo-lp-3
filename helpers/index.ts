@@ -8,7 +8,7 @@ export const getFieldValues = (data: IFormValues) => ({
   fields: [
     {
       name: "ts_lp___could_you_tell_us_about_your_talent_needs_",
-      value: data.q1,
+      value: data.q1.join(";"),
     },
     {
       name: "ts_lp___what_s_the_anticipated_length_of_time_you_need_this_talent__",
