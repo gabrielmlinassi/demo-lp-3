@@ -1,8 +1,8 @@
-import Image from "next/image";
-import TextField from "@/form/TextField";
-import src from "@/form-assets/q7.png";
 import { FC } from "react";
+import Image from "next/image";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
+import TextField from "@/form/TextField";
+import src from "@/form-assets/q7.svg";
 import { IFormValues } from "pages/form";
 
 type ContactFormProps = {
@@ -20,7 +20,7 @@ const ContactForm: FC<ContactFormProps> = ({ register, errors }) => {
         objectFit="contain"
         alt="welcome message"
       />
-      <div className="text-[#5E6284]">
+      <div className="mt-4 text-[#5E6284]">
         Please provide your contact info and I will reach out shortly!
       </div>
       <div className="mt-8">
@@ -28,7 +28,6 @@ const ContactForm: FC<ContactFormProps> = ({ register, errors }) => {
           <TextField
             label="Name"
             placeholder="type your name here"
-            required
             register={register("name")}
             error={errors.name}
           />
@@ -43,8 +42,13 @@ const ContactForm: FC<ContactFormProps> = ({ register, errors }) => {
           <TextField
             label="Company Name"
             placeholder="type your company's name here"
-            required
             register={register("company")}
+            error={errors.company}
+          />
+          <TextField
+            label="Job Title"
+            placeholder="type your job title here"
+            register={register("jobTitle")}
             error={errors.company}
           />
           <TextField

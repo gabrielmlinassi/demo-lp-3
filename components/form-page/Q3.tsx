@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Controller } from "react-hook-form";
 import { Radio } from "./Radio";
 import { RadioGroup } from "./RadioGroup";
-import src from "@/form-assets/q3.png";
+import src from "@/form-assets/q3.svg";
 
 const Q3 = ({ control }) => {
   return (

@@ -24,8 +24,12 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
     register,
   } = props;
 
-  const baseClasses =
-    "w-full rounded-full border-none px-4 py-3 bg-white placeholder-[#768390]";
+  const baseClasses = cn(
+    "w-full border-2 rounded-full px-4 py-3 bg-white placeholder-[#768390] focus:ring",
+    error
+      ? "border-red-400 focus:border-red-400 focus:ring-red-200"
+      : "border-gray-100 focus:border-gray-300 focus:ring-gray-200"
+  );
 
   return (
     <>
@@ -47,7 +51,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
         ) : (
           <div className="relative">
             <input
-              className={baseClasses}
+              className={cn(baseClasses)}
               id={label}
               type={type}
               placeholder={placeholder}

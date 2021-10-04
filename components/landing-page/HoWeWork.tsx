@@ -1,6 +1,8 @@
 import Image from "next/image";
 import cn from "classnames";
-
+import instructionalDesignerSrc from "@/lp-assets/instructional-designer.png";
+import managerSrc from "@/lp-assets/manager.png";
+import facilitatorSrc from "@/lp-assets/facilitator.png";
 import Heading from "@/landing-page/shared/Heading";
 import CTAButton from "./shared/CTAButton";
 import Badge from "./shared/Badge";
@@ -8,7 +10,7 @@ import Badge from "./shared/Badge";
 type Steps = {
   name?: string;
   role?: string;
-  imgSrc: string;
+  imgSrc: StaticImageData | string;
   imgAlt: string;
 };
 
@@ -16,19 +18,19 @@ const steps: Steps[] = [
   {
     name: "Ann Cathers",
     role: "SweetRush L&D recruiter",
-    imgSrc: "/assets/instructional-designer.png",
+    imgSrc: instructionalDesignerSrc,
     imgAlt: "administrator",
   },
   {
-    imgSrc: "/assets/facilitator.png",
+    imgSrc: facilitatorSrc,
     imgAlt: "facilitator",
   },
   {
-    imgSrc: "/assets/manager.png",
+    imgSrc: managerSrc,
     imgAlt: "manager",
   },
   {
-    imgSrc: "/assets/manager.png",
+    imgSrc: managerSrc,
     imgAlt: "manager",
   },
 ];

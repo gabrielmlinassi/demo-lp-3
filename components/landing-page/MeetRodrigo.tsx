@@ -1,5 +1,7 @@
 import cn from "classnames";
 import Image from "next/image";
+import rodrigoDesktopSrc from "@/lp-assets/rodrigo-desktop.png";
+import rodrigoMobileSrc from "@/lp-assets/rodrigo-mobile.png";
 import Badge from "@/landing-page/shared/Badge";
 import CTAButton from "@/landing-page/shared/CTAButton";
 import { useDevices } from "hooks/useDevices";
@@ -60,7 +62,7 @@ const MeetRodrigo = () => {
         <div className="xl:col-start-2 xl:row-start-1 xl:row-span-3 h-80 sm:h-96 xl:h-auto mt-24 xl:mt-0">
           <div className="relative w-full h-full">
             <Image
-              src={isMobile ? "/rodrigo-mobile.png" : "/rodrigo-desktop.png"}
+              src={isMobile ? rodrigoMobileSrc : rodrigoDesktopSrc}
               alt=""
               layout="fill"
               objectFit="contain"
@@ -86,7 +88,7 @@ const MeetRodrigo = () => {
           <Image src="/signature.svg" alt="signature" width={100} height={50} />
           <div className="mt-4">rodrigo@sweetrush.com</div>
         </div>
-        <div className="hidden 2xl:block 2xl:col-start-1 2xl:col-span-2 place-self-center mt-20">
+        <div className="hidden 2xl:block 2xl:col-start-1 2xl:col-span-full place-self-center mt-20">
           <CTAButton>Find My Perfect Fit Learning Professional</CTAButton>
         </div>
       </div>

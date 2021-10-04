@@ -47,6 +47,10 @@ export const getFieldValues = (data: IFormValues) => ({
       value: data.company,
     },
     {
+      name: "jobtitle",
+      value: data.jobTitle,
+    },
+    {
       name: "ts_lp___is_there_anything_else_you_d_like_to_share_with_us_",
       value: data.message,
     },

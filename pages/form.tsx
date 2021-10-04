@@ -26,6 +26,7 @@ export interface IFormValues {
   name: string;
   email: string;
   company: string;
+  jobTitle: string;
   message: string;
 }
 
@@ -39,6 +40,7 @@ const defaultValues: IFormValues = {
   name: "",
   email: "",
   company: "",
+  jobTitle: "",
   message: "",
 };
 
@@ -65,7 +67,6 @@ const Form = () => {
   useEffect(() => {
     if (finished) {
       const data = getFieldValues(result);
-      console.log({ data });
 
       fetch("/api/submit-form", {
         method: "POST",
@@ -105,9 +106,11 @@ const Form = () => {
         className="flex flex-col justify-between h-full"
       >
         {Steps[step]}
-        <Error show={!isEmpty(formState.errors)}>
-          {getErrorMessage(formState.errors)}
-        </Error>
+        <div className="mt-6">
+          <Error show={!isEmpty(formState.errors)}>
+            {getErrorMessage(formState.errors)}
+          </Error>
+        </div>
         <div className="flex justify-between items-end w-full pt-6">
           <Progressbar step={step} totalSteps={totalSteps} />
           <FormButton type="submit" size="large">
