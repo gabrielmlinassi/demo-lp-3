@@ -26,8 +26,8 @@ const ContactForm: FC<ContactFormProps> = ({ register, errors }) => {
       <div className="mt-8">
         <div className="grid grid-cols-3 gap-y-6 items-center text-left">
           <TextField
-            label="Name"
-            placeholder="type your name here"
+            label="Full Name"
+            placeholder="type your full name here"
             register={register("name")}
             error={errors.name}
           />

@@ -1,10 +1,12 @@
+import { FC } from "react";
 import Image from "next/image";
-import { Controller } from "react-hook-form";
+import { Control, Controller } from "react-hook-form";
 import { Radio } from "./Radio";
 import { RadioGroup } from "./RadioGroup";
 import src from "@/form-assets/q2.svg";
+import { IFormValues } from "pages/form";
 
-const Q2 = ({ control }) => {
+const Q2: FC<{ control: Control<IFormValues> }> = ({ control }) => {
   return (
     <>
       <div>
@@ -18,10 +20,14 @@ const Q2 = ({ control }) => {
       </div>
       <div>
         <Controller
-          render={({ field: { onChange, value } }) => {
+          render={({ field: { onChange, value }, formState: { errors } }) => {
             return (
               <RadioGroup value={value} onChange={onChange}>
-                <Radio label="Less than a month" value="Less than a month" />
+                <Radio
+                  focus={!!errors.q2}
+                  label="Less than a month"
+                  value="Less than a month"
+                />
                 <Radio label="1–3 months" value="1-3 months" />
                 <Radio label="3–6 months" value="3-6 months" />
                 <Radio label="More than 6 months" value="More than 6 months" />

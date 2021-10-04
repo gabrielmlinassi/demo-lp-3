@@ -1,10 +1,12 @@
+import { FC } from "react";
 import Image from "next/image";
-import { Controller } from "react-hook-form";
+import { Control, Controller } from "react-hook-form";
 import { Radio } from "./Radio";
 import { RadioGroup } from "./RadioGroup";
 import src from "@/form-assets/q4.svg";
+import { IFormValues } from "pages/form";
 
-const Q4 = ({ control }) => {
+const Q4: FC<{ control: Control<IFormValues> }> = ({ control }) => {
   return (
     <>
       <div>
@@ -18,7 +20,7 @@ const Q4 = ({ control }) => {
       </div>
       <div>
         <Controller
-          render={({ field: { onChange, value } }) => {
+          render={({ field: { onChange, value }, formState: { errors } }) => {
             return (
               <RadioGroup value={value} onChange={onChange}>
                 <Radio
