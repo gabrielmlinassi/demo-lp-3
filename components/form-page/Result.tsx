@@ -1,42 +1,45 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import cn from "classnames";
 import confetti from "canvas-confetti";
-import MyImage from "@/shared/MyImage";
-import src1 from "@/form-assets/finished-1.svg";
-import src2 from "@/form-assets/finished-2.svg";
 import { ArrowLeftIcon } from "@heroicons/react/outline";
 
-const Result = () => {
+const Result: FC<{ img: any }> = ({ img }) => {
   const { push } = useRouter();
+  const [hasLoaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    let count = 0;
-    const intervalId = setInterval(() => {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        angle: 60,
-        origin: {
-          x: 0,
-          y: 1,
-        },
-      });
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        angle: 120,
-        origin: {
-          x: 1,
-          y: 1,
-        },
-      });
+    if (!hasLoaded) return;
 
-      if (++count === 3) {
-        clearInterval(intervalId);
-      }
+    setTimeout(() => {
+      let count = 0;
+      const intervalId = setInterval(() => {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          angle: 60,
+          origin: {
+            x: 0,
+            y: 1,
+          },
+        });
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          angle: 120,
+          origin: {
+            x: 1,
+            y: 1,
+          },
+        });
+
+        if (++count === 3) {
+          clearInterval(intervalId);
+        }
+      }, 200);
     }, 200);
-  }, []);
+  }, [hasLoaded]);
 
   return (
     <div className="space-y-8 py-12">
@@ -45,8 +48,25 @@ const Result = () => {
           Thank You!
         </div>
       </div>
-      <MyImage className="w-3/4 mx-auto" src={src1} alt="welcome message" />
-      <MyImage className="w-3/4 mx-auto" src={src2} alt="welcome message" />
+      <Image
+        src={img.msg1.src}
+        placeholder="blur"
+        blurDataURL={img.msg1.blurDataURL}
+        width={550}
+        height={150}
+        objectFit="contain"
+        alt=""
+      />
+      <Image
+        src={img.msg2.src}
+        placeholder="blur"
+        blurDataURL={img.msg2.blurDataURL}
+        width={550}
+        height={150}
+        objectFit="contain"
+        alt=""
+        onLoad={() => setLoaded(true)}
+      />
       <div className="flex items-center justify-center pt-4 w-full">
         <BackButton onClick={() => push("/")}>Go back to home page</BackButton>
       </div>
