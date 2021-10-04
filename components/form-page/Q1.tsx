@@ -1,16 +1,23 @@
 import { FC } from "react";
 import Image from "next/image";
 import { UseFormRegister } from "react-hook-form";
-import { IFormValues } from "pages/form";
+import { IFormValues, PreloadedImg } from "pages/form";
 import { Checkbox } from "./Checkbox";
 import src from "@/form-assets/q1.svg";
 
-const Q1: FC<{ register: UseFormRegister<IFormValues> }> = ({ register }) => {
+type Q1Props = {
+  register: UseFormRegister<IFormValues>;
+  img: PreloadedImg;
+};
+
+const Q1: FC<Q1Props> = ({ register, img }) => {
   return (
     <>
-      <div className="animate-slide">
+      <div>
         <Image
-          src={src}
+          src={img.src}
+          placeholder="blur"
+          blurDataURL={img.blurDataURL}
           width={550}
           height={150}
           objectFit="contain"

@@ -3,18 +3,21 @@ import Image from "next/image";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import TextField from "@/form/TextField";
 import src from "@/form-assets/q7.svg";
-import { IFormValues } from "pages/form";
+import { IFormValues, PreloadedImg } from "pages/form";
 
 type ContactFormProps = {
   register: UseFormRegister<IFormValues>;
   errors: FieldErrors<IFormValues>;
+  img: PreloadedImg;
 };
 
-const ContactForm: FC<ContactFormProps> = ({ register, errors }) => {
+const ContactForm: FC<ContactFormProps> = ({ register, errors, img }) => {
   return (
     <>
       <Image
-        src={src}
+        src={img.src}
+        placeholder="blur"
+        blurDataURL={img.blurDataURL}
         width={550}
         height={150}
         objectFit="contain"
