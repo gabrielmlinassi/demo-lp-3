@@ -1,6 +1,7 @@
+import Image from "next/image";
 import CTAButton from "@/landing-page/shared/CTAButton";
 import Heading from "@/landing-page/shared/Heading";
-import Image from "next/image";
+import src from "@/lp-assets/why-work-with-us-bg.png";
 
 const WhyWorkWithUs = () => {
   return (
@@ -9,11 +10,11 @@ const WhyWorkWithUs = () => {
       className="pt-16 sm:pt-32 pr-0 sm:pr-6 2xl:pr-0 bg-gradient-to-r from-[#192024] to-[#3D4E57]"
     >
       <div className="relative overflow-hidden">
-        <div className="pb-32 sm:pb-32 grid grid-cols-2 max-w-screen-xl mx-auto">
+        <div className="pb-44 sm:pb-32 grid grid-cols-2 max-w-screen-xl mx-auto">
           <div>
             <div className="absolute inset-0 -left-20 -bottom-12">
               <Image
-                src="/why-work-with-us-bg.png"
+                src={src}
                 layout="fill"
                 objectFit="contain"
                 className="object-left-bottom sm:object-left-top"

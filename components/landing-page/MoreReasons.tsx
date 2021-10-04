@@ -10,22 +10,26 @@ const MoreReasons = () => {
 
   return (
     <section className="max-w-screen-xl mx-auto pt-20 pb-10 xl:px-6 2xl:px-0">
-      <Heading
-        highlightedTitle="5 More Reasons"
-        title="You'll Love Working With Us"
-        subtitle={
-          <>
-            <div>
-              The SweetRush Talent Solutions team is exceptionally good at
-              attracting top instructional designers who will fit your needs and
-              culture.
-            </div>
-            <div className="font-bold">Click on the cards to learn more!</div>
-          </>
-        }
-      />
+      <div className="px-4">
+        <Heading
+          highlightedTitle="5 More Reasons"
+          title="You'll Love Working With Us"
+          subtitle={
+            <>
+              <div className="mt-4">
+                The SweetRush Talent Solutions team is exceptionally good at
+                attracting top instructional designers who will fit your needs
+                and culture.
+              </div>
+              <div className="font-bold mt-4">
+                Click on the cards to learn more!
+              </div>
+            </>
+          }
+        />
+      </div>
       {isMobile ? (
-        <Swiper spaceBetween={-25} slidesPerView={1.25}>
+        <Swiper spaceBetween={-75} slidesPerView={1.25}>
           {items.map((item, key) => (
             <SwiperSlide key={key} className="py-8 pl-4">
               <Card

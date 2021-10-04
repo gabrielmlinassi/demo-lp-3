@@ -18,14 +18,14 @@ module.exports = {
         "subfooter-line": 'url("/subfooter-arrow.svg")',
         "subfooter-line-mobile": 'url("/subfooter-arrow-mobile.svg")',
         form: 'url("/assets/form/bg.svg")',
-        "why-work-with-us-pattern":
-          "url('/why-work-with-us-texture.png'), linear-gradient(90deg, #42BEAD 0.01%, #3195AC 43.79%, #2364A4 100.04%)",
-        "line-1": 'url("/assets/line1.svg")',
-        "line-2": 'url("/assets/line2.svg")',
-        "line-3": 'url("/assets/line3.svg")',
-        "line-1-mobile": 'url("/assets/line1-mobile.svg")',
-        "line-2-mobile": 'url("/assets/line2-mobile.svg")',
-        "line-3-mobile": 'url("/assets/line3-mobile.svg")',
+        "meet-rodrigo-pattern":
+          "url('/assets/landing-page/meet-rodrigo-texture.png'), linear-gradient(90deg, #42BEAD 0.01%, #3195AC 43.79%, #2364A4 100.04%)",
+        "line-1": 'url("/assets/landing-page/line1.svg")',
+        "line-2": 'url("/assets/landing-page/line2.svg")',
+        "line-3": 'url("/assets/landing-page/line3.svg")',
+        "line-1-mobile": 'url("/assets/landing-page/line1-mobile.svg")',
+        "line-2-mobile": 'url("/assets/landing-page/line2-mobile.svg")',
+        "line-3-mobile": 'url("/assets/landing-page/line3-mobile.svg")',
       },
       maxWidth: {
         "screen-2xl": "90rem", // 1440px
