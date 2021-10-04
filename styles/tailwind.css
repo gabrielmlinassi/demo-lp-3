@@ -7,6 +7,10 @@ html {
   scroll-behavior: smooth;
 }
 
+img {
+  transition: opacity 0.3s;
+}
+
 @layer utilities {
   .clip-path-inverted-hexagon {
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);

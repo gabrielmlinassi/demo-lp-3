@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import cn from "classnames";
@@ -7,8 +7,11 @@ import { ArrowLeftIcon } from "@heroicons/react/outline";
 
 const Result: FC<{ img: any }> = ({ img }) => {
   const { push } = useRouter();
+  const [hasLoaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    if (!hasLoaded) return;
+
     setTimeout(() => {
       let count = 0;
       const intervalId = setInterval(() => {
@@ -35,8 +38,8 @@ const Result: FC<{ img: any }> = ({ img }) => {
           clearInterval(intervalId);
         }
       }, 200);
-    }, 300);
-  }, []);
+    }, 200);
+  }, [hasLoaded]);
 
   return (
     <div className="space-y-8 py-12">
@@ -62,6 +65,7 @@ const Result: FC<{ img: any }> = ({ img }) => {
         height={150}
         objectFit="contain"
         alt=""
+        onLoad={() => setLoaded(true)}
       />
       <div className="flex items-center justify-center pt-4 w-full">
         <BackButton onClick={() => push("/")}>Go back to home page</BackButton>

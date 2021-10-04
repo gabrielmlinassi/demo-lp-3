@@ -2,7 +2,6 @@ import { FC } from "react";
 import Image from "next/image";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import TextField from "@/form/TextField";
-import src from "@/form-assets/q7.svg";
 import { IFormValues, PreloadedImg } from "pages/form";
 
 type ContactFormProps = {

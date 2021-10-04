@@ -72,8 +72,8 @@ const Form: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   };
 
   const totalSteps = Object.keys(Steps).length + 1;
-  const started = step > 0;
-  const finished = step === totalSteps;
+  const started = true; //step > 0;
+  const finished = true; //step === totalSteps;
   const isLastStep = step === totalSteps - 1;
 
   useEffect(() => {
