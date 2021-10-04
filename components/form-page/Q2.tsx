@@ -24,7 +24,7 @@ const Q2: FC<{ control: Control<IFormValues> }> = ({ control }) => {
             return (
               <RadioGroup value={value} onChange={onChange}>
                 <Radio
-                  focus={!!errors.q2}
+                  shouldFocusError={!!errors.q2}
                   label="Less than a month"
                   value="Less than a month"
                 />

@@ -5,18 +5,19 @@ import { FC } from "react";
 type RadioProps = {
   value: string;
   label: string;
-  focus?: boolean;
+  shouldFocusError?: boolean;
 };
 
-export const Radio: FC<RadioProps> = ({ value, label, focus }) => {
+export const Radio: FC<RadioProps> = ({ value, label, shouldFocusError }) => {
   return (
     <$RadioGroup.Option value={value} className="focus:outline-none">
       {({ checked }) => (
         <div className="group flex items-center space-x-4">
           <div
             className={cn(
-              "bg-gradient-to-r from-[#2075C6] to-[#51A1FF] p-[2px] rounded-full flex focus-within:ring",
-              focus && "ring-4 ring-[#2075C6] ring-opacity-25"
+              "bg-gradient-to-r from-[#2075C6] to-[#51A1FF] p-[2px] rounded-full flex",
+              (shouldFocusError || checked) &&
+                "ring ring-[#2075C6] ring-opacity-50"
             )}
           >
             <div className="bg-white p-[2px] rounded-full flex">

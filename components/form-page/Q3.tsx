@@ -24,7 +24,7 @@ const Q3: FC<{ control: Control<IFormValues> }> = ({ control }) => {
             return (
               <RadioGroup value={value} onChange={onChange}>
                 <Radio
-                  focus={!!errors.q3}
+                  shouldFocusError={!!errors.q3}
                   label="30 hours per week or more"
                   value="30 hours per week or more"
                 />

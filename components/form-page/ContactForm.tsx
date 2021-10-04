@@ -11,6 +11,8 @@ type ContactFormProps = {
 };
 
 const ContactForm: FC<ContactFormProps> = ({ register, errors }) => {
+  console.log(errors);
+
   return (
     <>
       <Image

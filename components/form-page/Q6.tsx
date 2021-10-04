@@ -24,7 +24,7 @@ const Q6: FC<{ control: Control<IFormValues> }> = ({ control }) => {
             return (
               <RadioGroup value={value} onChange={onChange}>
                 <Radio
-                  focus={!!errors.q6}
+                  shouldFocusError={!!errors.q6}
                   label="Right away—I am ready and eager to engage the right talent!"
                   value="Right away—I am ready and eager to engage the right talent!"
                 />
