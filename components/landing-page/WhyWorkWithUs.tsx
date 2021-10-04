@@ -7,10 +7,10 @@ const WhyWorkWithUs = () => {
   return (
     <section
       id="why-work-with-us"
-      className="pt-16 sm:pt-32 pr-0 sm:pr-6 2xl:pr-0 bg-gradient-to-r from-[#192024] to-[#3D4E57]"
+      className="pt-16 2xl:pt-32 pr-0 sm:pr-6 2xl:pr-0 bg-gradient-to-r from-[#192024] to-[#3D4E57]"
     >
       <div className="relative overflow-hidden">
-        <div className="pb-44 sm:pb-32 grid grid-cols-2 max-w-screen-xl mx-auto">
+        <div className="pb-44 sm:pb-14 grid grid-cols-2 max-w-screen-xl mx-auto">
           <div>
             <div className="absolute inset-0 -left-20 -bottom-12">
               <Image
@@ -22,7 +22,7 @@ const WhyWorkWithUs = () => {
               />
             </div>
           </div>
-          <div className="col-span-full sm:col-span-1 text-right sm:text-left z-10 bg-transparent xl:bg-black xl:bg-opacity-20 p-3 rounded-md 2xl:bg-transparent 2xl:p-0">
+          <div className="col-span-full sm:col-span-1 text-right sm:text-left z-10 bg-transparent xl:bg-black xl:bg-opacity-20 2xl:bg-transparent p-3 sm:p-5 xl:rounded-md  xl:shadow-md">
             <Heading
               titleColor="white"
               highlightedTitleColor="green"
@@ -37,7 +37,7 @@ const WhyWorkWithUs = () => {
                 </>
               }
             />
-            <div className="mt-4 sm:mt-12 space-y-4 sm:space-y-8 text-white leading-relaxed">
+            <div className="mt-4 sm:mt-2 space-y-4 text-white leading-relaxed">
               <div>
                 Whoever is doing recruiting for you should have a{" "}
                 <span className="font-bold">
@@ -53,7 +53,7 @@ const WhyWorkWithUs = () => {
                 and find the right nuanced talent profile to fit those needs.
               </div>
             </div>
-            <div className="w-1/2 sm:w-full ml-auto mt-4 sm:mt-8 text-white leading-relaxed">
+            <div className="w-1/2 sm:w-full ml-auto mt-4 text-white leading-relaxed">
               <div>
                 SweetRush’s Talent Solutions team has one agenda: to source and
                 place great talent when our clients—like you—need to augment
@@ -61,7 +61,7 @@ const WhyWorkWithUs = () => {
               </div>
             </div>
           </div>
-          <div className="hidden sm:flex col-span-full items-center justify-center sm:mt-44 z-10">
+          <div className="hidden sm:flex col-span-full items-center justify-center sm:mt-28 z-10">
             <CTAButton>Find My Perfect Fit Learning Professional</CTAButton>
           </div>
         </div>

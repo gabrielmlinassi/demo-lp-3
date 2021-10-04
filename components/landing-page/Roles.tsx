@@ -13,21 +13,25 @@ const Roles = () => {
   return (
     <section
       id="roles"
-      className="max-w-screen-xl mx-auto pb-16 pt-24 sm:px-3 xl:px-0"
+      className="max-w-screen-xl mx-auto pb-16 pt-12 2xl:pt-24 px-3 xl:px-0"
     >
       <Heading
         highlightedTitle="Roles"
         title="We Place"
         subtitle={
           <>
-            Our learning and development professionals are{" "}
-            <span className="font-bold">experienced, vetted, available,</span>{" "}
-            and ready to augment your team in these roles:
+            <div className="inline">
+              Our learning and development professionals are{" "}
+            </div>
+            <div className="inline">
+              <span className="font-bold">experienced, vetted, available,</span>{" "}
+              and ready to augment your team in these roles:
+            </div>
           </>
         }
       />
       <CardRoles />
-      <div className="text-center space-y-6 mt-20 sm:mt-0">
+      <div className="text-center space-y-6 mt-8 sm:-mt-4 2xl:mt-20 ">
         <p className="text-[#2263A3] font-bold">
           We’re also adept at securing difficult-to-find Subject Matter Experts.
         </p>
@@ -41,14 +45,14 @@ const CardRoles = () => {
   return (
     <div
       className={cn(
-        "grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 grid-rows-4 xl:grid-rows-3 place-items-center gap-y-20 xl:gap-y-0 xl:mt-20 sm:max-w-xl sm:mx-auto xl:max-w-full"
+        "grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 grid-rows-4 xl:grid-rows-3 place-items-center gap-y-24 sm:gap-y-20 xl:gap-y-0 xl:mt-6 2xl:mt-20 sm:max-w-xl sm:mx-auto xl:max-w-full"
       )}
     >
       {ROLES.map((role, key) => (
         <div
           key={key}
           className={cn(
-            "inline-flex flex-col w-40 sm:w-44 xl:w-48 h-36 px-8 space-y-4 items-center justify-center rounded-2xl bg-[#F1F2F4]",
+            "inline-flex flex-col w-40 sm:w-44 xl:w-48 h-28 sm:h-36 px-8 space-y-4 items-center justify-center rounded-2xl bg-[#F1F2F4]",
 
             key === 0 &&
               cn(

@@ -53,7 +53,7 @@ const Heading: FC<HeadingProps> = ({
         >
           {highlightedTitle}
         </span>
-        <span className="text-[30px] sm:text-[40px] leading-3 z-0 font-bold">
+        <span className="text-[30px] sm:text-[40px] leading-8 z-0 font-bold">
           {title}
         </span>
       </h1>

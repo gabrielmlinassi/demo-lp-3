@@ -12,7 +12,7 @@ const MeetRodrigo = () => {
   return (
     <section
       id="meet-rodrigo"
-      className="py-20 px-6 bg-meet-rodrigo-pattern bg-no-repeat bg-cover"
+      className="pt-10 pb-14 px-6 bg-meet-rodrigo-pattern bg-no-repeat bg-cover"
     >
       <div
         className={cn(
@@ -25,7 +25,7 @@ const MeetRodrigo = () => {
         <div
           className={cn(
             "xl:row-start-2 xl:col-start-1 xl:col-span-2",
-            "xl:-mt-6 font-strawberry text-5xl xl:text-9xl leading-tight"
+            "xl:-mt-8 font-strawberry text-5xl xl:text-9xl leading-tight"
           )}
         >
           <span className="relative">
@@ -33,7 +33,7 @@ const MeetRodrigo = () => {
             <div className="absolute w-24 h-24 xl:-right-10 xl:-top-4 2xl:-right-20 z-10 xl:bg-subfooter-line bg-no-repeat"></div>
           </span>
         </div>
-        <div className="xl:row-start-3 space-y-8 mt-4">
+        <div className="xl:row-start-3 space-y-4 mt-2">
           <div className="font-bold">
             who heads up our Talent Solutions team:
           </div>
@@ -88,7 +88,7 @@ const MeetRodrigo = () => {
           <Image src="/signature.svg" alt="signature" width={100} height={50} />
           <div className="mt-4">rodrigo@sweetrush.com</div>
         </div>
-        <div className="hidden 2xl:block 2xl:col-start-1 2xl:col-span-full place-self-center mt-20">
+        <div className="hidden xl:block xl:col-start-1 xl:col-span-full place-self-center mt-8">
           <CTAButton>Find My Perfect Fit Learning Professional</CTAButton>
         </div>
       </div>

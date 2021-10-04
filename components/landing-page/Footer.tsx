@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <section className="px-3 py-10 sm:py-4 2xl:px-0 bg-[#313131]">
+    <section className="px-3 sm:px-6 py-4 2xl:px-0 bg-[#313131]">
       <div className="max-w-screen-xl mx-auto flex flex-col sm:flex-row sm:justify-between space-y-6 sm:space-y-0">
         <div className="flex-shrink-0 flex items-center justify-center space-x-3 divide-x-2 divide-[#768390]">
           <div className="relative h-10 w-36">

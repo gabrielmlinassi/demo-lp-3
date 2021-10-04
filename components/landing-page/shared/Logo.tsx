@@ -12,11 +12,11 @@ const Logo: FC<LogoProps> = ({ className }) => {
     <div
       className={cn(
         className,
-        "flex items-center space-x-4 divide-x-2 divide-[#768390]"
+        "flex items-center space-x-2 sm:space-x-4 divide-x-2 divide-[#768390]"
       )}
     >
       <a href="https://www.sweetrush.com/" target="_blank" rel="noreferrer">
-        <div className="relative h-10 w-36">
+        <div className="relative h-10 w-32 sm:w-36">
           <Image
             className="block"
             layout="fill"
@@ -27,7 +27,7 @@ const Logo: FC<LogoProps> = ({ className }) => {
           />
         </div>
       </a>
-      <div className="hidden xl:block pl-3 mt-1">
+      <div className="pl-2 sm:pl-3 mt-1">
         <Link href="/" passHref>
           <span className="text-[#009BDE] text-sm font-medium cursor-pointer">
             TALENT SOLUTIONS
