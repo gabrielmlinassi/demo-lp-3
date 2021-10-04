@@ -1,6 +1,8 @@
 import Image from "next/image";
 import cn from "classnames";
-
+import instructionalDesignerSrc from "@/lp-assets/instructional-designer.png";
+import managerSrc from "@/lp-assets/manager.png";
+import facilitatorSrc from "@/lp-assets/facilitator.png";
 import Heading from "@/landing-page/shared/Heading";
 import CTAButton from "./shared/CTAButton";
 import Badge from "./shared/Badge";
@@ -8,7 +10,9 @@ import Badge from "./shared/Badge";
 type Steps = {
   name?: string;
   role?: string;
-  imgSrc: string;
+  title: React.ReactNode;
+  description: string;
+  imgSrc: StaticImageData | string;
   imgAlt: string;
 };
 
@@ -16,19 +20,51 @@ const steps: Steps[] = [
   {
     name: "Ann Cathers",
     role: "SweetRush L&D recruiter",
-    imgSrc: "/assets/instructional-designer.png",
+    title: (
+      <>
+        <div>You’re in the hands</div>
+        <div>of an expert.</div>
+      </>
+    ),
+    description:
+      "Meet Ann Cathers, a SweetRush L&D recruiter! Our experienced recruiters partner with you to understand your business needs.",
+    imgSrc: instructionalDesignerSrc,
     imgAlt: "administrator",
   },
   {
-    imgSrc: "/assets/facilitator.png",
+    title: (
+      <>
+        <div>We’ll craft your</div>
+        <div>job profile.</div>
+      </>
+    ),
+    description:
+      "Need help writing a job description? We have the expertise to be your copilot or take the lead.",
+    imgSrc: facilitatorSrc,
     imgAlt: "facilitator",
   },
   {
-    imgSrc: "/assets/manager.png",
+    title: (
+      <>
+        <div>We’ll screen to find</div>
+        <div>ideal candidates.</div>
+      </>
+    ),
+    description:
+      "Let us do the time-consuming work of screening and interviewing. We’ll proctor assessments and present the best candidates.",
+    imgSrc: managerSrc,
     imgAlt: "manager",
   },
   {
-    imgSrc: "/assets/manager.png",
+    title: (
+      <>
+        <div>You’ll interview and select</div>
+        <div>your perfect-fit talent.</div>
+      </>
+    ),
+    description:
+      "We choose candidates who have the skills and experience you need. Many of our clients only need to interview one candidate!",
+    imgSrc: managerSrc,
     imgAlt: "manager",
   },
 ];
@@ -46,7 +82,7 @@ const HoWeWork = () => {
           {steps.map((step, idx) => (
             <div
               className={cn(
-                "relative inline-flex flex-col items-center w-full",
+                "relative inline-flex flex-col items-center w-full h-full",
                 idx % 2 === 0 ? "sm:place-self-end" : "sm:place-self-start",
                 "xl:place-self-center"
               )}
@@ -87,15 +123,9 @@ const HoWeWork = () => {
               {/* p3 */}
               <div className="mt-4 space-y-2">
                 <div className="font-bold text-[#2263A3] text-center">
-                  <div>You’re in the hands</div>
-                  <div>of an expert.</div>
+                  {step.title}
                 </div>
-                <p className="text-center text-[#5E6284]">
-                  Meet Ann Cathers, a SweetRush L&D recruiter. Like all of our
-                  recruiters, she has years of experience vetting learning
-                  professionals, will understand your business needs, be agile,
-                  and partner with you throughout the process.
-                </p>
+                <p className="text-center text-[#5E6284]">{step.description}</p>
               </div>
             </div>
           ))}

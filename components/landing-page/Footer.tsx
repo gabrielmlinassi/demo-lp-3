@@ -21,7 +21,7 @@ const Footer = () => {
             </span>
           </div>
         </div>
-        <div className="flex items-center flex-col sm:flex-row sm:space-x-2 text-center text-white text-opacity-75">
+        <div className="flex items-center flex-col sm:flex-row sm:space-x-2 text-sm text-center text-white text-opacity-75">
           <div>© 2021 SweetRush, Inc. All Rights Reserved.</div>
           <div>
             Visit us at{" "}

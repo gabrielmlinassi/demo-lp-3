@@ -3,7 +3,7 @@ import Image from "next/image";
 import { UseFormRegister } from "react-hook-form";
 import { IFormValues } from "pages/form";
 import { Checkbox } from "./Checkbox";
-import src from "@/form-assets/q1.png";
+import src from "@/form-assets/q1.svg";
 
 const Q1: FC<{ register: UseFormRegister<IFormValues> }> = ({ register }) => {
   return (
@@ -17,7 +17,7 @@ const Q1: FC<{ register: UseFormRegister<IFormValues> }> = ({ register }) => {
           alt="welcome message"
         />
       </div>
-      <div className="space-y-8">
+      <div className="space-y-4">
         <Checkbox
           label="I need an extra pair of hands to complete a project."
           value="Need an extra pair of hands to complete a project."

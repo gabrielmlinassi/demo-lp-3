@@ -1,4 +1,7 @@
 import Image from "next/image";
+import heroSrc from "@/lp-assets/hero-large.png";
+import kaiserSrc from "@/lp-assets/kaiser-logo.png";
+
 import CTAButton from "@/landing-page/shared/CTAButton";
 
 export default function Hero() {
@@ -37,7 +40,7 @@ export default function Hero() {
             </p>
             <div>
               <Image
-                src="/kaiser-logo.png"
+                src={kaiserSrc}
                 width={125}
                 height={15}
                 objectFit="contain"
@@ -49,7 +52,7 @@ export default function Hero() {
         </div>
         <div className="relative col-start-3 sm:row-start-2 sm:row-span-2 lg:col-start-2 lg:row-start-1 lg:row-span-3 -ml-20 lg:ml-0 mt-6 lg:mt-0">
           <Image
-            src="/hero-large.png"
+            src={heroSrc}
             layout="fill"
             objectFit="cover"
             alt="woman"

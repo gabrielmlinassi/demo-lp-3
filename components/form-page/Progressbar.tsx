@@ -17,7 +17,7 @@ const Progressbar: FC<ProgressbarProps> = ({ step, totalSteps }) => {
 
   return (
     <div className="flex flex-col items-start">
-      <div className="relative w-52 h-3 mb-1 rounded-full overflow-hidden">
+      <div className="relative w-28 xl:w-52 h-3 mb-1 rounded-full overflow-hidden">
         <div className="absolute bg-gray-300 w-full h-3"></div>
         <div
           style={{ width: width }}

@@ -26,6 +26,7 @@ export interface IFormValues {
   name: string;
   email: string;
   company: string;
+  jobTitle: string;
   message: string;
 }
 
@@ -39,11 +40,13 @@ const defaultValues: IFormValues = {
   name: "",
   email: "",
   company: "",
+  jobTitle: "",
   message: "",
 };
 
 const Form = () => {
   const [step, setStep] = useState(0);
+  const [isSending, setSending] = useState(false);
   const [result, setResult] = useState<IFormValues>(defaultValues);
   const { handleSubmit, register, control, formState } = useForm<IFormValues>();
 
@@ -64,8 +67,8 @@ const Form = () => {
 
   useEffect(() => {
     if (finished) {
+      setSending(true);
       const data = getFieldValues(result);
-      console.log({ data });
 
       fetch("/api/submit-form", {
         method: "POST",
@@ -73,7 +76,8 @@ const Form = () => {
       })
         .then((res) => res.json())
         .then((data) => console.log({ data }))
-        .catch((err) => console.log({ err }));
+        .catch((err) => console.log({ err }))
+        .finally(() => setSending(false));
     }
   }, [finished, result]);
 
@@ -105,25 +109,32 @@ const Form = () => {
         className="flex flex-col justify-between h-full"
       >
         {Steps[step]}
-        <Error show={!isEmpty(formState.errors)}>
-          {getErrorMessage(formState.errors)}
-        </Error>
+        <div className="mt-6">
+          <Error show={!isEmpty(formState.errors)}>
+            {getErrorMessage(formState.errors)}
+          </Error>
+        </div>
         <div className="flex justify-between items-end w-full pt-6">
           <Progressbar step={step} totalSteps={totalSteps} />
-          <FormButton type="submit" size="large">
-            {isLastStep ? "Submit" : "Next"}
+          <FormButton type="submit" disabled={isSending} size="large">
+            {isLastStep ? (
+              isSending ? (
+                <div className="flex space-x-4">
+                  <span>Sending</span>
+                  <LoadingIcon />
+                </div>
+              ) : (
+                "Submit"
+              )
+            ) : (
+              "Next"
+            )}
           </FormButton>
         </div>
       </form>
     </Container>
   );
 };
-
-{
-  /* <div className="flex space-x-4">
-  <span>Sending</span> <LoadingIcon />
-</div> */
-}
 
 const getErrorMessage = (errors: FieldErrors<IFormValues>) => {
   const { q1, q2, q3, q4, q5, q6, name, email, company } = errors;

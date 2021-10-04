@@ -1,6 +1,11 @@
 import Image from "next/image";
 import cn from "classnames";
-
+import administratorSrc from "@/lp-assets/administrator.png";
+import facilitatorSrc from "@/lp-assets/facilitator.png";
+import graphicDesignerSrc from "@/lp-assets/graphic-designer.png";
+import instructionalDesignerSrc from "@/lp-assets/instructional-designer.png";
+import managerSrc from "@/lp-assets/manager.png";
+import psychometricianSrc from "@/lp-assets/psychometrician.png";
 import CTAButton from "@/landing-page/shared/CTAButton";
 import Heading from "@/landing-page/shared/Heading";
 
@@ -132,32 +137,32 @@ const CardRoles = () => {
 
 const ROLES = [
   {
-    src: "/assets/administrator.png",
+    src: administratorSrc,
     title: "LMS Administrators",
     alt: "administrator",
   },
   {
-    src: "/assets/facilitator.png",
+    src: facilitatorSrc,
     title: "Training Facilitators",
     alt: "facilitator",
   },
   {
-    src: "/assets/graphic-designer.png",
+    src: graphicDesignerSrc,
     title: "Graphic Designers",
     alt: "graphic designer",
   },
   {
-    src: "/assets/instructional-designer.png",
+    src: instructionalDesignerSrc,
     title: "Instructional Designers",
     alt: "instructional designer",
   },
   {
-    src: "/assets/manager.png",
+    src: managerSrc,
     title: "Project Managers",
     alt: "manager",
   },
   {
-    src: "/assets/psychometrician.png",
+    src: psychometricianSrc,
     title: "Psychometricians",
     alt: "psychometrician",
   },

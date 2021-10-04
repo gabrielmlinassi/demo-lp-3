@@ -8,8 +8,9 @@ enum Sizes {
 }
 
 type ButtonProps = {
-  size?: keyof typeof Sizes;
   type: "button" | "submit";
+  size?: keyof typeof Sizes;
+  disabled?: boolean;
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 };
 
@@ -23,26 +24,30 @@ const FormButton: FC<ButtonProps> = ({
   onClick,
   size = "base",
   type,
+  disabled,
 }) => {
   return (
     <button
       type={type}
+      disabled={disabled}
       onClick={onClick}
       className={cn(
         "group relative flex items-center justify-center space-x-2",
         size === Sizes.large ? "px-16 py-3" : "px-8 py-3",
         "text-white font-semibold bg-gradient-to-r from-[#2075C6] to-[#51A1FF] rounded-full",
-        "transition-all duration-300 hover:shadow-fly hover:to-[#2875bd]"
+        "transition-all duration-300 hover:shadow-fly disabled:hover:shadow-none hover:to-[#2875bd] disabled:hover:to-[#51A1FF]"
       )}
     >
       <span>{children}</span>
-      <ChevronRightIcon
-        className={cn(
-          "w-5 absolute opacity-0 group-hover:opacity-100",
-          ChevronPosition[size],
-          "transition-all duration-300"
-        )}
-      />
+      {!disabled && (
+        <ChevronRightIcon
+          className={cn(
+            "w-5 absolute opacity-0 group-hover:opacity-100",
+            ChevronPosition[size],
+            "transition-all duration-300"
+          )}
+        />
+      )}
     </button>
   );
 };
