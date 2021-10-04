@@ -12,7 +12,7 @@ const MeetRodrigo = () => {
   return (
     <section
       id="meet-rodrigo"
-      className="py-20 px-6 bg-why-work-with-us-pattern bg-no-repeat bg-cover"
+      className="py-20 px-6 bg-meet-rodrigo-pattern bg-no-repeat bg-cover"
     >
       <div
         className={cn(

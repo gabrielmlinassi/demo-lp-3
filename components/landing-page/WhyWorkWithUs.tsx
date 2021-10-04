@@ -1,6 +1,7 @@
+import Image from "next/image";
 import CTAButton from "@/landing-page/shared/CTAButton";
 import Heading from "@/landing-page/shared/Heading";
-import Image from "next/image";
+import src from "@/lp-assets/why-work-with-us-bg.png";
 
 const WhyWorkWithUs = () => {
   return (
@@ -13,7 +14,7 @@ const WhyWorkWithUs = () => {
           <div>
             <div className="absolute inset-0 -left-20 -bottom-12">
               <Image
-                src="/why-work-with-us-bg.png"
+                src={src}
                 layout="fill"
                 objectFit="contain"
                 className="object-left-bottom sm:object-left-top"
