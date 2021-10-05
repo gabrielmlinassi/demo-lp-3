@@ -47,9 +47,18 @@ module.exports = {
           "0%": { transform: "translateX(-5%)", opacity: "0" },
           "100%": { transform: "translateX(0%)", opacity: "100" },
         },
+        "slide-in-nav": {
+          "0%": {
+            transform: "translateY(-64px)",
+          },
+          "100%": {
+            transform: "translateY(0px)",
+          },
+        },
       },
       animation: {
         slide: "slide .5s ease-in-out",
+        "slide-in-nav": "slide-in-nav .5s ease-in-out",
       },
     },
   },

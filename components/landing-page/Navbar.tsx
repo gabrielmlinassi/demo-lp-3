@@ -2,15 +2,48 @@ import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import cn from "classnames";
 import Logo from "@/landing-page/shared/Logo";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export const Navbar = () => {
+  const [sticky, setSticky] = useState(false);
+  const [navHeight, setNavHeight] = useState(0);
+  const navRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = useCallback(() => {
+    if (window.scrollY > navHeight * 2) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  }, [navHeight]);
+
+  useEffect(() => {
+    if (navRef.current) {
+      setNavHeight(navRef.current.clientHeight);
+    }
+  }, [navRef]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
   return (
-    <Disclosure as="nav" className="h-16">
-      {({ open }) => (
-        <div className="lg:fixed lg:top-0 z-20 lg:w-full bg-white shadow-md">
+    <Disclosure
+      as="nav"
+      className={cn(
+        sticky ? "fixed animate-slide-in-nav sm:animate-none" : "block",
+        "z-20 w-full h-16"
+      )}
+    >
+      {({ open, close }) => (
+        <div
+          ref={navRef}
+          className="lg:fixed lg:top-0 z-20 lg:w-full bg-white shadow-md"
+        >
           <div className="max-w-screen-xl mx-auto px-3 xl:px-5 2xl:px-0">
             <div className="relative flex items-center justify-between h-16">
-              <div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
+              <div className="absolute inset-y-0 right-0 z-20 flex items-center lg:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-[#ff99c2]">
                   <span className="sr-only">Open main menu</span>
@@ -53,11 +86,16 @@ export const Navbar = () => {
           </div>
 
           <Disclosure.Panel className="lg:hidden">
-            <div className="absolute left-4 right-0 top-16 bottom-4 z-20 pt-2 pb-3 space-y-1 divide-y divide-white bg-[#F1F2F4]">
+            <div className="fixed left-4 right-0 top-16 bottom-4 z-20 pt-2 pb-3 space-y-1 divide-y divide-white bg-[#F1F2F4]">
               {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
+                  onClick={(e) => {
+                    // e.preventDefault();
+
+                    close();
+                  }}
                   className={cn(
                     item.current
                       ? "text-[#2263A3] hover:bg-gray-700 hover:text-white"
