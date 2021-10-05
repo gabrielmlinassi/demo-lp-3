@@ -2,7 +2,6 @@ import Image from "next/image";
 import cn from "classnames";
 import heroSrc from "@/lp-assets/hero-large.png";
 import kaiserSrc from "@/lp-assets/kaiser-logo.png";
-
 import CTAButton from "@/landing-page/shared/CTAButton";
 
 export default function Hero() {
@@ -13,8 +12,8 @@ export default function Hero() {
         "relative flex flex-col bg-gradient-to-r from-[#5A4797] to-[#2364A4]"
       )}
     >
-      <div className="h-full flex-1 flex relative max-w-screen-xl mx-auto pt-10 lg:pt-4 2xl:pt-20">
-        <div className=" flex flex-col w-full sm:w-1/2">
+      <div className="flex-1 flex h-full relative max-w-screen-xl mx-auto pt-10 lg:pt-4 2xl:pt-20">
+        <div className="flex flex-col w-full sm:w-1/2">
           <div className="px-3 xl:px-5 2xl:px-0">
             <h1 className="text-7xl sm:text-9xl leading-none text-white font-strawberry capitalize">
               Build your team.
@@ -32,7 +31,7 @@ export default function Hero() {
             </p>
           </div>
           <div className="flex relative sm:max-w-[400px] h-full lg:max-w-full z-10 pl-3 xl:pl-5 2xl:pl-0">
-            <div className="flex flex-col w-1/2 xl:w-full pb-20">
+            <div className="flex flex-col w-1/2 lg:w-full pb-20">
               <div className="text-lg sm:text-2xl mt-4 2xl:mt-6 font-bold italic text-[#3CBFAE]">
                 “I have worked with SweetRush and Rodrigo for many years, and I
                 trust them and count on them, and they never let me down.”
@@ -54,7 +53,7 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-            <div className="block xl:hidden relative w-3/4 h-full -ml-12">
+            <div className="block lg:hidden relative w-3/4 h-full -ml-12">
               <Image
                 src={heroSrc}
                 layout="fill"
@@ -65,7 +64,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="hidden xl:block w-1/2 relative -ml-20 lg:ml-0 mt-6 lg:mt-0">
+        <div className="hidden lg:block relative w-1/2 -ml-20 lg:ml-0 mt-6 lg:mt-0">
           <Image
             src={heroSrc}
             layout="fill"
