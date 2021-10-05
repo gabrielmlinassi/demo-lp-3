@@ -1,23 +1,20 @@
 import { FC } from "react";
 import Image from "next/image";
 import { UseFormRegister } from "react-hook-form";
-import { IFormValues, PreloadedImg } from "pages/form";
+import { IFormValues } from "pages/form";
 import { Checkbox } from "./Checkbox";
 import src from "@/form-assets/q1.svg";
 
 type Q1Props = {
   register: UseFormRegister<IFormValues>;
-  img: PreloadedImg;
 };
 
-const Q1: FC<Q1Props> = ({ register, img }) => {
+const Q1: FC<Q1Props> = ({ register }) => {
   return (
     <>
       <div>
         <Image
-          src={img.src}
-          placeholder="blur"
-          blurDataURL={img.blurDataURL}
+          src={src}
           width={550}
           height={150}
           objectFit="contain"

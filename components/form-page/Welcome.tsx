@@ -1,22 +1,18 @@
 import Image from "next/image";
 import FormButton from "@/form/FormButton";
 import src from "@/form-assets/welcome.png";
-import { PreloadedImg } from "pages/form";
 import { FC } from "react";
 
 type WelcomeProps = {
   onStarted: () => void;
-  img: PreloadedImg;
 };
 
-const Welcome: FC<WelcomeProps> = ({ onStarted, img }) => {
+const Welcome: FC<WelcomeProps> = ({ onStarted }) => {
   return (
     <div className="space-y-8 text-center">
       <div>
         <Image
-          src={img.src}
-          placeholder="blur"
-          blurDataURL={img.blurDataURL}
+          src={src}
           width={300}
           height={300}
           objectFit="contain"

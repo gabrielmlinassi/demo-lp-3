@@ -4,13 +4,15 @@ import Image from "next/image";
 import cn from "classnames";
 import confetti from "canvas-confetti";
 import { ArrowLeftIcon } from "@heroicons/react/outline";
+import src1 from "@/form-assets/finished-1.svg";
+import src2 from "@/form-assets/finished-2.svg";
 
-const Result: FC<{ img: any }> = ({ img }) => {
+const Result = () => {
   const { push } = useRouter();
-  const [hasLoaded, setLoaded] = useState(false);
+  const [hasLoaded, setLoaded] = useState({ src1: false, src2: false });
 
   useEffect(() => {
-    if (!hasLoaded) return;
+    if (!hasLoaded.src1 && !hasLoaded.src2) return;
 
     setTimeout(() => {
       let count = 0;
@@ -49,23 +51,20 @@ const Result: FC<{ img: any }> = ({ img }) => {
         </div>
       </div>
       <Image
-        src={img.msg1.src}
-        placeholder="blur"
-        blurDataURL={img.msg1.blurDataURL}
+        src={src1}
         width={550}
         height={150}
         objectFit="contain"
         alt=""
+        onLoad={() => setLoaded((prev) => ({ ...prev, src: true }))}
       />
       <Image
-        src={img.msg2.src}
-        placeholder="blur"
-        blurDataURL={img.msg2.blurDataURL}
+        src={src2}
         width={550}
         height={150}
         objectFit="contain"
         alt=""
-        onLoad={() => setLoaded(true)}
+        onLoad={() => setLoaded((prev) => ({ ...prev, src2: true }))}
       />
       <div className="flex items-center justify-center pt-4 w-full">
         <BackButton onClick={() => push("/")}>Go back to home page</BackButton>

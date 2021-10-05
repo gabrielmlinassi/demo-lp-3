@@ -4,21 +4,18 @@ import { Control, Controller } from "react-hook-form";
 import { Radio } from "./Radio";
 import { RadioGroup } from "./RadioGroup";
 import src from "@/form-assets/q6.svg";
-import { IFormValues, PreloadedImg } from "pages/form";
+import { IFormValues } from "pages/form";
 
 type Q6Props = {
   control: Control<IFormValues>;
-  img: PreloadedImg;
 };
 
-const Q6: FC<Q6Props> = ({ control, img }) => {
+const Q6: FC<Q6Props> = ({ control }) => {
   return (
     <>
       <div>
         <Image
-          src={img.src}
-          placeholder="blur"
-          blurDataURL={img.blurDataURL}
+          src={src}
           width={550}
           height={150}
           objectFit="contain"

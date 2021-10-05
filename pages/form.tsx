@@ -1,6 +1,5 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FieldErrors, SubmitHandler, useForm } from "react-hook-form";
-import { getPlaiceholder } from "plaiceholder";
 
 import FormButton from "@/form/FormButton";
 import Progressbar from "@/form/Progressbar";
@@ -17,7 +16,6 @@ import Q5 from "@/form/Q5";
 import Q6 from "@/form/Q6";
 import { getFieldValues, isEmpty } from "helpers";
 import { LoadingIcon } from "components/icons";
-import { InferGetStaticPropsType } from "next";
 
 export interface IFormValues {
   q1: string[];
@@ -47,28 +45,20 @@ const defaultValues: IFormValues = {
   message: "",
 };
 
-const Form: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  preloadedImgs,
-}) => {
+const Form = () => {
   const [step, setStep] = useState(0);
   const [isSending, setSending] = useState(false);
   const [result, setResult] = useState<IFormValues>(defaultValues);
   const { handleSubmit, register, control, formState } = useForm<IFormValues>();
 
   const Steps = {
-    "1": <Q1 img={preloadedImgs.q1} register={register} />,
-    "2": <Q2 img={preloadedImgs.q2} control={control} />,
-    "3": <Q3 img={preloadedImgs.q3} control={control} />,
-    "4": <Q4 img={preloadedImgs.q4} control={control} />,
-    "5": <Q5 img={preloadedImgs.q5} control={control} />,
-    "6": <Q6 img={preloadedImgs.q6} control={control} />,
-    "7": (
-      <ContactForm
-        img={preloadedImgs.q7}
-        register={register}
-        errors={formState.errors}
-      />
-    ),
+    "1": <Q1 register={register} />,
+    "2": <Q2 control={control} />,
+    "3": <Q3 control={control} />,
+    "4": <Q4 control={control} />,
+    "5": <Q5 control={control} />,
+    "6": <Q6 control={control} />,
+    "7": <ContactForm register={register} errors={formState.errors} />,
   };
 
   const totalSteps = Object.keys(Steps).length + 1;
@@ -100,10 +90,7 @@ const Form: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   if (!started) {
     return (
       <Container>
-        <Welcome
-          img={preloadedImgs.welcome}
-          onStarted={() => setStep((prev) => ++prev)}
-        />
+        <Welcome onStarted={() => setStep((prev) => ++prev)} />
       </Container>
     );
   }
@@ -111,7 +98,7 @@ const Form: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   if (finished) {
     return (
       <Container>
-        <Result img={preloadedImgs.result} />
+        <Result />
       </Container>
     );
   }
@@ -168,46 +155,5 @@ export type PreloadedImg = {
   src: StaticImageData;
   blurDataURL: string;
 };
-
-export async function getStaticProps() {
-  const srcs = [
-    "/assets/form/welcome.png",
-    "/assets/form/q1.svg",
-    "/assets/form/q2.svg",
-    "/assets/form/q3.svg",
-    "/assets/form/q4.svg",
-    "/assets/form/q5.svg",
-    "/assets/form/q6.svg",
-    "/assets/form/q7.svg",
-    "/assets/form/finished-1.svg",
-    "/assets/form/finished-2.svg",
-  ];
-
-  const promises = srcs.map((src) => getPlaiceholder(src));
-  const response = await Promise.all(promises);
-  const preloadedImg: PreloadedImg[] = response.map((res) => ({
-    src: res.img,
-    blurDataURL: res.base64,
-  }));
-
-  const preloadedImgs = {
-    welcome: preloadedImg[0],
-    q1: preloadedImg[1],
-    q2: preloadedImg[2],
-    q3: preloadedImg[3],
-    q4: preloadedImg[4],
-    q5: preloadedImg[5],
-    q6: preloadedImg[6],
-    q7: preloadedImg[7],
-    result: {
-      msg1: preloadedImg[8],
-      msg2: preloadedImg[9],
-    },
-  };
-
-  return {
-    props: { preloadedImgs },
-  };
-}
 
 export default Form;

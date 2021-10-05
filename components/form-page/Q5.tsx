@@ -4,21 +4,18 @@ import { Radio } from "./Radio";
 import { RadioGroup } from "./RadioGroup";
 import src from "@/form-assets/q5.svg";
 import { FC } from "react";
-import { IFormValues, PreloadedImg } from "pages/form";
+import { IFormValues } from "pages/form";
 
 type Q5Props = {
   control: Control<IFormValues>;
-  img: PreloadedImg;
 };
 
-const Q5: FC<Q5Props> = ({ control, img }) => {
+const Q5: FC<Q5Props> = ({ control }) => {
   return (
     <>
       <div>
         <Image
-          src={img.src}
-          placeholder="blur"
-          blurDataURL={img.blurDataURL}
+          src={src}
           width={550}
           height={150}
           objectFit="contain"
