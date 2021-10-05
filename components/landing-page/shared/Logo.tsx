@@ -5,9 +5,10 @@ import cn from "classnames";
 
 interface LogoProps {
   className?: string;
+  isBlured?: boolean;
 }
 
-const Logo: FC<LogoProps> = ({ className }) => {
+const Logo: FC<LogoProps> = ({ className, isBlured = false }) => {
   return (
     <div
       className={cn(
@@ -29,7 +30,12 @@ const Logo: FC<LogoProps> = ({ className }) => {
       </a>
       <div className="pl-2 sm:pl-3 mt-1">
         <Link href="/" passHref>
-          <span className="text-white sm:text-[#009BDE] text-sm font-medium cursor-pointer">
+          <span
+            className={cn(
+              isBlured ? "text-white" : "text-[#009BDE]",
+              "sm:text-[#009BDE] text-sm font-medium cursor-pointer"
+            )}
+          >
             TALENT SOLUTIONS
           </span>
         </Link>
