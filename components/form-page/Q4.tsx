@@ -8,17 +8,14 @@ import { IFormValues, PreloadedImg } from "pages/form";
 
 type Q4Props = {
   control: Control<IFormValues>;
-  img: PreloadedImg;
 };
 
-const Q4: FC<Q4Props> = ({ control, img }) => {
+const Q4: FC<Q4Props> = ({ control }) => {
   return (
     <>
       <div>
         <Image
-          src={img.src}
-          placeholder="blur"
-          blurDataURL={img.blurDataURL}
+          src={src}
           width={550}
           height={150}
           objectFit="contain"
