@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Navbar from "@/landing-page/Navbar";
 import Hero from "@/landing-page/Hero";
 import Roles from "@/landing-page/Roles";
@@ -10,6 +11,9 @@ import MeetRodrigo from "@/landing-page/MeetRodrigo";
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>SweetRush | Talent Solutions</title>
+      </Head>
       <header>
         <Navbar />
       </header>

@@ -29,7 +29,7 @@ const Logo: FC<LogoProps> = ({ className }) => {
       </a>
       <div className="pl-2 sm:pl-3 mt-1">
         <Link href="/" passHref>
-          <span className="text-[#009BDE] text-sm font-medium cursor-pointer">
+          <span className="text-white sm:text-[#009BDE] text-sm font-medium cursor-pointer">
             TALENT SOLUTIONS
           </span>
         </Link>
