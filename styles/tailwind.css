@@ -7,6 +7,13 @@ html {
   scroll-behavior: smooth;
 }
 
+#roles,
+#how-we-work,
+#why-work-with-us,
+#meet-rodrigo {
+  scroll-margin-top: 80px;
+}
+
 img {
   transition: opacity 0.3s;
 }
