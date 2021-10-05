@@ -29,7 +29,7 @@ export default function Hero() {
         {/*  */}
 
         <div className="sm:max-w-[400px] lg:max-w-full col-start-1 col-span-2 row-start-3 row-end-3 z-10 lg:col-span-1 pb-28 2xl:pb-56 pl-3 xl:pl-5 2xl:pl-0">
-          <div className="text-lg sm:text-2xl mt-4 2xl:mt-12 font-bold italic text-[#3CBFAE]">
+          <div className="text-lg sm:text-2xl mt-4 2xl:mt-6 font-bold italic text-[#3CBFAE]">
             “I have worked with SweetRush and Rodrigo for many years, and I
             trust them and count on them, and they never let me down.”
           </div>
@@ -59,7 +59,7 @@ export default function Hero() {
             className="object-left-top"
           />
         </div>
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="absolute bottom-14 left-1/2 transform -translate-x-1/2 z-10">
           <CTAButton>Find My Perfect Fit Learning Professional</CTAButton>
         </div>
       </div>
