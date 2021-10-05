@@ -13,7 +13,7 @@ export default function Hero() {
       )}
     >
       <div className="flex-1 flex h-full relative max-w-screen-xl mx-auto pt-10 lg:pt-4 2xl:pt-20">
-        <div className="flex flex-col w-full sm:w-1/2">
+        <div className="flex flex-col w-full lg:w-1/2">
           <div className="px-3 xl:px-5 2xl:px-0">
             <h1 className="text-7xl sm:text-9xl leading-none text-white font-strawberry capitalize">
               Build your team.
@@ -30,9 +30,9 @@ export default function Hero() {
               and we’re ready to help.
             </p>
           </div>
-          <div className="flex relative sm:max-w-[400px] h-full lg:max-w-full z-10 pl-3 xl:pl-5 2xl:pl-0">
+          <div className="flex relative h-full pl-3 xl:pl-5 2xl:pl-0 mt-4 2xl:mt-6">
             <div className="flex flex-col w-1/2 lg:w-full pb-20">
-              <div className="text-lg sm:text-2xl mt-4 2xl:mt-6 font-bold italic text-[#3CBFAE]">
+              <div className="text-lg sm:text-2xl font-bold italic text-[#3CBFAE]">
                 “I have worked with SweetRush and Rodrigo for many years, and I
                 trust them and count on them, and they never let me down.”
               </div>
@@ -59,7 +59,7 @@ export default function Hero() {
                 layout="fill"
                 objectFit="cover"
                 alt="woman"
-                className="object-left-bottom"
+                className="object-left-top"
               />
             </div>
           </div>
