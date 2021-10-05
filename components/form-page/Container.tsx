@@ -12,7 +12,7 @@ const Container: FC = ({ children }) => {
           "bg-opacity-60 sm:bg-opacity-100 border-b sm:border-b-0 border-gray-200 shadow-md sm:shadow-none"
         )}
       >
-        <Logo />
+        <Logo isBlured />
       </div>
       <div className="flex-1 flex flex-col items-center justify-start sm:justify-center max-w-screen-md w-full mx-auto px-2 sm:p-4 text-center">
         <div
