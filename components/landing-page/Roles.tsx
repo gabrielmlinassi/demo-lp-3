@@ -20,13 +20,9 @@ const Roles = () => {
         title="We Place"
         subtitle={
           <>
-            <div className="inline">
-              Our learning and development professionals are{" "}
-            </div>
-            <div className="inline">
-              <span className="font-bold">experienced, vetted, available,</span>{" "}
-              and ready to augment your team in these roles:
-            </div>
+            Our learning and development professionals are{" "}
+            <span className="font-bold">experienced, vetted, available,</span>{" "}
+            and ready to augment your team in these roles:
           </>
         }
       />
