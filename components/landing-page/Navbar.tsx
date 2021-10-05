@@ -1,6 +1,5 @@
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import Image from "next/image";
 import cn from "classnames";
 import Logo from "@/landing-page/shared/Logo";
 

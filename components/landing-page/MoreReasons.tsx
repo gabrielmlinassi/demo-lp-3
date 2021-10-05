@@ -4,32 +4,42 @@ import CTAButton from "./shared/CTAButton";
 import Heading from "./shared/Heading";
 import Card, { Colors } from "./Card";
 import { useDevices } from "hooks/useDevices";
+import { FlipIcon } from "components/icons";
 
 const MoreReasons = () => {
   const { isMobile } = useDevices();
 
   return (
-    <section className="max-w-screen-xl mx-auto pt-20 pb-10 xl:px-6 2xl:px-0">
+    <section className="max-w-screen-xl mx-auto pt-16 pb-14 xl:px-6 2xl:px-0">
       <div className="px-4">
         <Heading
           highlightedTitle="5 More Reasons"
           title="You'll Love Working With Us"
           subtitle={
             <>
-              <div className="mt-4">
-                The SweetRush Talent Solutions team is exceptionally good at
-                attracting top instructional designers who will fit your needs
-                and culture.
+              <div className="mt-4 text-base">
+                <div className="inline sm:block">
+                  The SweetRush Talent Solutions team is exceptionally good at
+                  attracting{" "}
+                </div>
+                <div className="inline sm:block">
+                  top instructional designers who will fit your needs and
+                  culture.
+                </div>
               </div>
-              <div className="font-bold mt-4">
-                Click on the cards to learn more!
+              <div className="inline-flex items-center space-x-2 font-bold mt-4 text-base">
+                <span>Click on the</span>
+                <div className="bg-gray-100 p-1 rounded-full">
+                  <FlipIcon />
+                </div>
+                <span>icon to learn more!</span>
               </div>
             </>
           }
         />
       </div>
       {isMobile ? (
-        <Swiper spaceBetween={-75} slidesPerView={1.25}>
+        <Swiper slidesPerView={window.innerWidth > 400 ? 1.5 : 1.25}>
           {items.map((item, key) => (
             <SwiperSlide key={key} className="py-8 pl-4">
               <Card
@@ -54,7 +64,7 @@ const MoreReasons = () => {
         </div>
       )}
 
-      <div className="hidden xl:flex items-center justify-center xl:mt-28">
+      <div className="hidden xl:flex items-center justify-center xl:mt-16">
         <CTAButton>Find My Perfect Fit Learning Professional</CTAButton>
       </div>
     </section>

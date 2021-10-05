@@ -17,7 +17,7 @@ import Q5 from "@/form/Q5";
 import Q6 from "@/form/Q6";
 import { getFieldValues, isEmpty } from "helpers";
 import { LoadingIcon } from "components/icons";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { InferGetStaticPropsType } from "next";
 
 export interface IFormValues {
   q1: string[];

@@ -81,18 +81,18 @@ const steps: Step[] = [
 const HoWeWork = () => {
   return (
     <section id="how-we-work" className="bg-[#F1F2F4] min-h-screen">
-      <div className="max-w-screen-xl mx-auto pt-8 pb-16 xl:pt-24 sm:px-3 xl:px-0">
+      <div className="max-w-screen-xl mx-auto pt-8 pb-16 lg:pt-12 2xl:pt-24 px-3 sm:px-6">
         <Heading
           highlightedTitle="How"
           title="we work with you"
           subtitle="Your time is valuable. We take the lead—so you can focus on your job."
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 sm:gap-8 2xl:gap-14 mt-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 sm:gap-8 2xl:gap-14 lg:mt-8 2xl:mt-20">
           {steps.map((step, idx) => (
             <StepCard key={idx} step={step} idx={idx} />
           ))}
         </div>
-        <div className="flex items-center justify-center mt-28">
+        <div className="flex items-center justify-center mt-12 2xl:mt-28">
           <CTAButton>Find My Perfect Fit Learning Professional</CTAButton>
         </div>
       </div>

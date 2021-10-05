@@ -7,18 +7,18 @@ import CTAButton from "@/landing-page/shared/CTAButton";
 export default function Hero() {
   return (
     <section className="bg-gradient-to-r from-[#5A4797] to-[#2364A4]">
-      <div className="relative grid grid-cols-3 lg:grid-cols-2 max-w-screen-xl mx-auto pt-10 lg:pt-20">
+      <div className="relative grid grid-cols-3 lg:grid-cols-2 max-w-screen-xl mx-auto pt-10 lg:pt-4 2xl:pt-20">
         <div className="col-span-3 lg:col-span-1 px-3 xl:px-5 2xl:px-0">
           <h1 className="text-7xl sm:text-9xl leading-none text-white font-strawberry capitalize">
             Build your team.
           </h1>
-          <h2 className="text-3xl sm:text-5xl leading-tight font-medium text-white">
+          <h2 className="text-3xl sm:text-5xl lg:-mt-2 2xl:mt-0 leading-tight font-medium text-white">
             Meet your deadlines. Create training that gets results.
           </h2>
         </div>
 
         {/*  */}
-        <div className="col-span-3 sm:col-span-2 lg:col-span-1 px-3 xl:px-5 2xl:px-0 mt-6">
+        <div className="col-span-3 sm:col-span-2 lg:col-span-1 px-3 xl:px-5 2xl:px-0 mt-6 lg:mt-4">
           <p className="text-base sm:text-lg text-white">
             You need good people to get the job done. Every day we produce
             training solutions, so we know how you feel! Allow us to help you
@@ -28,8 +28,8 @@ export default function Hero() {
         </div>
         {/*  */}
 
-        <div className="sm:max-w-[400px] lg:max-w-full col-start-1 col-span-2 row-start-3 row-end-3 z-10 lg:col-span-1 pb-28 lg:pb-56 pl-3 xl:pl-5 2xl:pl-0">
-          <div className="text-lg sm:text-2xl mt-4 sm:mt-12 font-bold italic text-[#3CBFAE]">
+        <div className="sm:max-w-[400px] lg:max-w-full col-start-1 col-span-2 row-start-3 row-end-3 z-10 lg:col-span-1 pb-28 2xl:pb-56 pl-3 xl:pl-5 2xl:pl-0">
+          <div className="text-lg sm:text-2xl mt-4 2xl:mt-6 font-bold italic text-[#3CBFAE]">
             “I have worked with SweetRush and Rodrigo for many years, and I
             trust them and count on them, and they never let me down.”
           </div>
