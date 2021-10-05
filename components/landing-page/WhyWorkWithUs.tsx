@@ -2,6 +2,7 @@ import Image from "next/image";
 import CTAButton from "@/landing-page/shared/CTAButton";
 import Heading from "@/landing-page/shared/Heading";
 import src from "@/lp-assets/why-work-with-us-bg.png";
+import cn from "classnames";
 
 const WhyWorkWithUs = () => {
   return (
@@ -17,12 +18,17 @@ const WhyWorkWithUs = () => {
                 src={src}
                 layout="fill"
                 objectFit="contain"
-                className="object-left-bottom sm:object-left-top"
+                className="object-left-bottom"
                 alt="woman reading sheets"
               />
             </div>
           </div>
-          <div className="col-span-full sm:col-span-1 text-right sm:text-left z-10 bg-transparent xl:bg-black xl:bg-opacity-20 2xl:bg-transparent p-3 sm:p-5 xl:rounded-md  xl:shadow-md">
+          <div
+            className={cn(
+              "col-span-full sm:col-span-1 p-3 sm:p-5 text-right sm:text-left",
+              "z-10 bg-transparent sm:bg-black sm:bg-opacity-20 2xl:bg-transparent sm:rounded-md"
+            )}
+          >
             <Heading
               titleColor="white"
               highlightedTitleColor="green"
@@ -30,8 +36,8 @@ const WhyWorkWithUs = () => {
               highlightedTitle="Why"
               title={
                 <>
-                  <span>Work With Us? </span>
-                  <div className="inline-block sm:leading-10 sm:-mt-4">
+                  <span>Work With Us?</span>{" "}
+                  <div className="inline-block sm:leading-10 lg:-mt-4">
                     We Do This Work!
                   </div>
                 </>

@@ -7,7 +7,7 @@ import { useDevices } from "hooks/useDevices";
 import { FlipIcon } from "components/icons";
 
 const MoreReasons = () => {
-  const { isMobile } = useDevices();
+  const { isMobile, isTablet } = useDevices();
 
   return (
     <section className="max-w-screen-xl mx-auto pt-16 pb-14 xl:px-6 2xl:px-0">
@@ -38,8 +38,12 @@ const MoreReasons = () => {
           }
         />
       </div>
-      {isMobile ? (
-        <Swiper slidesPerView={window.innerWidth > 400 ? 1.5 : 1.25}>
+      {isMobile || isTablet ? (
+        <Swiper
+          slidesPerView={
+            isMobile ? (window.innerWidth > 400 ? 1.5 : 1.25) : 2.75
+          }
+        >
           {items.map((item, key) => (
             <SwiperSlide key={key} className="py-8 pl-4">
               <Card
