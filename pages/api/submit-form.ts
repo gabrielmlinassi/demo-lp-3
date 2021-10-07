@@ -1,8 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 const submitForm = (req: NextApiRequest, res: NextApiResponse) => {
-  console.log(JSON.stringify(req.body));
-
   fetch(process.env.ENDPOINT, {
     method: "POST",
     headers: {
