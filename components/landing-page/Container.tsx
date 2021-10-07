@@ -32,7 +32,7 @@ const Container: FC = ({ children }) => {
           property="og:description"
           content="Our L&D professionals are experienced, vetted, available, and ready to augment your team in any roles you need. Contact us to find your perfect fit!"
         />
-        <meta property="og:image" content="" />
+        <meta property="og:image" content="/preview.jpg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
@@ -48,7 +48,7 @@ const Container: FC = ({ children }) => {
           property="twitter:description"
           content="Our L&D professionals are experienced, vetted, available, and ready to augment your team in any roles you need. Contact us to find your perfect fit!"
         />
-        <meta property="twitter:image" content="" />
+        <meta property="twitter:image" content="/preview.jpg" />
       </Head>
       {children}
     </>
